@@ -1,0 +1,89 @@
+<!-- <div id="loginbox" *ngIf="!submitted"> -->
+<div id="loginbox" style="display:none">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <p-panel header="User Information">
+            <h3>Email</h3>
+            <span class="ui-float-label" style="margin-bottom: 1em;">
+                <input id="email_input" formControlName="email" type="email" size="30" pInputText required>
+                <label for="email_input">Email</label>
+            </span>
+            <p-message severity="error" text="Valid email is required"
+                *ngIf="!loginForm.controls['email'].valid&&loginForm.controls['email'].dirty">
+            </p-message>
+
+            <h3>Name</h3>
+            <span class="ui-float-label" style="margin-bottom: 1em;">
+                <input id="name_input" formControlName="name" type="text" size="30" pInputText required>
+                <label for="name_input">Name</label>
+            </span>
+            <p-message styleClass="marginTop: 20;" severity="error" text="Name is required"
+                *ngIf="!loginForm.controls['name'].valid&&loginForm.controls['name'].dirty">
+            </p-message>
+
+            <br />
+            <p-footer>
+                <button pButton type="submit" icon="pi pi-play" label="Submit" class="ui-button-info"
+                    style="margin-right: .25em" [disabled]="loginForm.invalid"></button>
+            </p-footer>
+        </p-panel>
+    </form>
+</div>
+
+<div id="quizbox">
+    <!-- <div id="quizbox" *ngIf="submitted"> -->
+    <div class="ui-g">
+        <div id="user_info" class="ui-g-3">
+            <p><span class="titleText">Email: </span>{{email}}</p>
+            <p><span class="titleText">Name: </span>{{name}}</p>
+        </div>
+        <div class="ui-g-6"></div>
+        <div class="ui-g-3" id="timer">
+            {{timeLeft * 1000 | date:'mm:ss'}} left
+        </div>
+    </div>
+    <div id="quizContent">
+        <div *ngFor="let q of questionToDo; let i = index">
+            <div *ngIf="i == currQuestionId">
+                <p-panel>
+                    <p-header style="font-weight: bold;">
+                        Question {{i + 1}} ({{getQuestionType(q.type)}})
+                    </p-header>
+                    {{q.question_content}}
+                    <p-footer>
+                        <div *ngIf="q.type == 'tf'">
+                            <div *ngFor="let option of q.options">
+                                <p-radioButton [value]="option.option_id" [(ngModel)]="q.selected"></p-radioButton>
+                                {{option.option_content === true ? "True" : "False"}}
+                            </div>
+                            <p style="font-weight: bold;">Selected Value : {{getTfSelectedContent(i, q.selected)}}</p>
+                        </div>
+                        <div *ngIf="q.type == 'sc'">
+                            <div *ngFor="let option of q.options">
+                                <p-radioButton [value]="option.option_id" [(ngModel)]="q.selected"></p-radioButton>
+                                {{option.option_content}}
+                            </div>
+                            <p style="font-weight: bold;">Selected Value : {{(getScContent(i, q.selected))}}</p>
+                        </div>
+                        <div *ngIf="q.type == 'mc'">
+                            <div *ngFor="let option of q.options">
+                                <p-checkbox  [value]="option.option_id" [(ngModel)]="q.selected"></p-checkbox >
+                                {{option.option_content}}
+                            </div>
+                            <p style="font-weight: bold;">Selected Value(s) : {{(getMcContent(i, q.selected))}}</p>
+                        </div>
+                    </p-footer>
+                </p-panel>
+            </div>
+        </div>
+        <div class="ui-g" style="margin-top: 2em;">
+            <button pButton style="margin-right: .5em; width:6.5em" (click)="questionSwitch(false)"
+                [disabled]="currQuestionId == 0" icon="pi pi-arrow-left" label="Previous"></button>
+            <button pButton style="margin-right: .5em; width:6.5em" (click)="questionSwitch(true)"
+                [disabled]="currQuestionId == 9" icon="pi pi-arrow-right" iconPos="right" label="Next"></button>
+            <button pButton style="margin-right: .5em; width:6.5em" (click)="questionSwitch(true)"
+                icon="pi pi-angle-double-right" iconPos="right" label="Skip"></button>
+                <button pButton style="margin-right: .5em; width:6.5em" *ngIf="currQuestionId == 9"
+                icon="pi pi-cloud-upload" iconPos="right" label="Submit"></button>
+        </div>
+    </div>
+</div>

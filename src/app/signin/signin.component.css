@@ -1,0 +1,27 @@
+#loginbox {
+    margin: 200px auto auto auto;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+#quizbox {
+    margin: 100px 100px 100px 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.titleText {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#timer {
+    vertical-align: middle;
+    color: red;
+    font-weight: bold;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

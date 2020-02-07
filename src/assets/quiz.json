@@ -1,0 +1,1113 @@
+[
+    {
+        "question_id": 15010,
+        "type": "tf",
+        "question_content": "Implement procedural mechanisms that record and examine activity in information systems that contain or use electronic protected health information.",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": true,
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 2,
+                "option_content": false,
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15012,
+        "type": "sc",
+        "question_content": "Implement policies and procedures to prevent, detect, contain, and correct security violations.",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15014,
+        "type": "mc",
+        "question_content": "Implement policies and procedures to ensure that all members of its workforce have appropriate access to electronic protected health information.",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 5,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15016,
+        "type": "sc",
+        "question_content": "Implement policies and procedures for authorizing access to electronic protected health information.",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 5,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15018,
+        "type": "sc",
+        "question_content": "All sucessful and unsuccessful logins need to be monitored and reviewed by Security and  IT Management ",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            }
+        ]
+    },
+    {
+        "question_id": 15020,        
+        "type": "tf",
+        "question_content": "FortiCASB audit trail enabled automatically by default",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": true,
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": false,
+                "option_selected": false,
+                "option_answer": true
+            }
+        ]
+    },
+    {
+        "question_id": 15022,        
+        "type": "tf",
+        "question_content": "Checks to ensure FortiCASB policy should be enabled and properly configured",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": true,
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 2,
+                "option_content": false,
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15024,
+        "type": "tf",
+        "question_content": "Checks to ensure that any inactive accounts over 90 days old are either removed or disabled.",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": true,
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 2,
+                "option_content": false,
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15026,
+        "type": "tf",
+        "question_content": "Track the following activities: \n• create account\n• privileged elevation\n• changes to administrative accounts",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": true,
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": false,
+                "option_selected": false,
+                "option_answer": true
+            }
+        ]
+    },
+    {
+        "question_id": 15028,
+        "type": "tf",
+        "question_content": "Checks if cardholder data have exceeded retention time",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": true,
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 2,
+                "option_content": false,
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15030,
+        "type": "tf",
+        "question_content": "Track all activities of individual user accesses to cardholder data",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": true,
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 2,
+                "option_content": false,
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15032,
+        "type": "tf",
+        "question_content": "Track all activities of individual with root or administrative privileges",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": true,
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": false,
+                "option_selected": false,
+                "option_answer": true
+            }
+        ]
+    },
+    {
+        "question_id": 15034,
+        "type": "tf",
+        "question_content": "FortiCASB store audit trail for three years and with one year  immediately available for analysis ",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": true,
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": false,
+                "option_selected": false,
+                "option_answer": true
+            }
+        ]
+    },
+    {
+        "question_id": 15036,
+        "type": "tf",
+        "question_content": "Checks to ensure cardholder data should be only accessable within the orgnization",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": true,
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 2,
+                "option_content": false,
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15038,
+        "type": "sc",
+        "question_content": "Track failed attempts to access cloud resources",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15040,
+        "type": "sc",
+        "question_content": "List of categorized sanctioned and unsanctioned cloud applications in use as well as risk score ",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15042,
+        "type": "sc",
+        "question_content": "Track changes to user account, including add, delete/deactive account, change of account priviledge ",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            }
+        ]
+    },
+    {
+        "question_id": 15044,
+        "type": "sc",
+        "question_content": "List all active security policy, description and risk level ",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15046,
+        "type": "sc",
+        "question_content": "Track access to sensitive data",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            }
+        ]
+    },
+    {
+        "question_id": 15048,
+        "type": "sc",
+        "question_content": "Checks if Personal data have exceeded retention time",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15050,
+        "type": "sc",
+        "question_content": "Identify what personal data the company  has and where it resides.",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15052,
+        "type": "sc",
+        "question_content": "Track all access to personal data",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15054,
+        "type": "sc",
+        "question_content": "List all personal data which have public access",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15056,
+        "type": "sc",
+        "question_content": "Track all personal files that have been uploaded into unsanctioned cloud apps which located outside of EU",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            }
+        ]
+    },
+    {
+        "question_id": 15058,
+        "type": "sc",
+        "question_content": "Track all activities of individual with root or administrative privileges",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            }
+        ]
+    },
+    {
+        "question_id": 15060,
+        "type": "sc",
+        "question_content": "FortiCASB stored audit records in cloud based storage outside customer's environment",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            }
+        ]
+    },
+    {
+        "question_id": 15062,
+        "type": "mc",
+        "question_content": "Track changes to user account, including add, delete/deactive account, change of account priviledge ",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 5,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15064,
+        "type": "mc",
+        "question_content": "Display content of audit record",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 5,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15066,
+        "type": "mc",
+        "question_content": "Track all security alerts",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 5,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15068,
+        "type": "mc",
+        "question_content": "Track all activities of individual with root or administrative privileges",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 5,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            }
+        ]
+    },
+    {
+        "question_id": 15070,
+        "type": "mc",
+        "question_content": "Track all security alerts",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 5,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            }
+        ]
+    },
+    {
+        "question_id": 15072,
+        "type": "mc",
+        "question_content": "Track changes to user account, including add, delete/deactive account, change of account priviledge ",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 5,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id" : 6,
+                "option_content" : "vmbkbnk",
+                "option_selected" : false,
+                "option_answer" : true
+            }
+        ]
+    },
+    {
+        "question_id": 15074,
+        "type": "mc",
+        "question_content": "Track all security alerts",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 5,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15076,
+        "type": "mc",
+        "question_content": "Track all activities of individual with root or administrative privileges",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 5,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            }
+        ]
+    },
+    {
+        "question_id": 15078,
+        "type": "mc",
+        "question_content": "Ensure the confidentiality, integrity, and availability of all e-PHI they create, receive, maintain or transmit;\nThe Security Rule defines “confidentiality” to mean that e-PHI is not available or disclosed to unauthorized persons.",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 5,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    },
+    {
+        "question_id": 15080,
+        "type": "mc",
+        "question_content": "Ensure the confidentiality, integrity, and availability of all e-PHI they create, receive, maintain or transmit;\nThe Security Rule defines “confidentiality” to mean that e-PHI is not available or disclosed to unauthorized persons.",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 5,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            }
+        ]
+    },
+    {
+        "question_id": 15082,
+        "type": "mc",
+        "question_content": "Ensure the confidentiality, integrity, and availability of all e-PHI they create, receive, maintain or transmit;\nThe Security Rule defines “confidentiality” to mean that e-PHI is not available or disclosed to unauthorized persons.",
+        "options": [
+            {
+                "option_id": 1,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 2,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 3,
+                "option_content": "afsdfd",
+                "option_selected": false,
+                "option_answer": false
+            },
+            {
+                "option_id": 4,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 5,
+                "option_content": "fadsfdasfdsa",
+                "option_selected": false,
+                "option_answer": false
+            }
+        ]
+    }
+]
