@@ -2,7 +2,16 @@
     {
         "question_id": 15010,
         "type": "tf",
-        "question_content": "Implement procedural mechanisms that record and examine activity in information systems that contain or use electronic protected health information.",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Implement procedural mechanisms that record and examine activity in information systems that contain or use electronic protected health information."
+            },
+            {
+                "type" : "image",
+                "content" : "https://i.imgur.com/oc6Ut8U.jpg"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
@@ -21,29 +30,57 @@
     {
         "question_id": 15012,
         "type": "sc",
-        "question_content": "Implement policies and procedures to prevent, detect, contain, and correct security violations.",
+        "question_content": [
+            {   "type" : "text",
+                "content" : "Which tag is introduced in HTML5\n eg: "
+            },
+            {
+                "type" : "code",
+                "content" : "<article></article>"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "code",
+                        "content" : "<video></video>"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "code",
+                        "content" : "<span></span>"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "code",
+                        "content" : "<table></table>"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "code",
+                        "content" : "<div></div>"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             }
@@ -52,17 +89,36 @@
     {
         "question_id": 15014,
         "type": "mc",
-        "question_content": "Implement policies and procedures to ensure that all members of its workforce have appropriate access to electronic protected health information.",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Which of the followings are Tesla car?"
+            },
+            {
+                "type" : "image",
+                "content" : "https://i.imgur.com/Wp9LRRO.png"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "image",
+                        "content" : "https://i.imgur.com/ifSKpcQ.jpg"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "image",
+                        "content" : "https://i.imgur.com/Y6pem6d.jpg"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },

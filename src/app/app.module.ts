@@ -15,6 +15,8 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { CheckboxModule } from 'primeng/checkbox';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { CheckboxModule } from 'primeng/checkbox';
     MessageModule,
     RadioButtonModule,
     CheckboxModule,
+    ConfirmDialogModule,
+    ToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
