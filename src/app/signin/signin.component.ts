@@ -136,6 +136,8 @@ export class SigninComponent implements OnInit {
     res2.forEach(item => {
       res.push(item);
     });
+
+    res = this.shuffle(res);
     console.log("Index for questions", res);
     this.questionToDo = res;
   }
