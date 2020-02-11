@@ -106,6 +106,10 @@
                     {
                         "type" : "image",
                         "content" : "https://i.imgur.com/ifSKpcQ.jpg"
+                    },
+                    {
+                        "type" : "text",
+                        "content" : "Car puppy"
                     }
                 ],
                 "option_selected": false,
@@ -117,6 +121,10 @@
                     {
                         "type" : "image",
                         "content" : "https://i.imgur.com/Y6pem6d.jpg"
+                    },
+                    {
+                        "type" : "text",
+                        "content" : "Car mommy"
                     }
                 ],
                 "option_selected": false,
@@ -128,6 +136,10 @@
                     {
                         "type" : "image",
                         "content" : "https://i.imgur.com/ghKd4tl.jpg"
+                    },
+                    {
+                        "type" : "text",
+                        "content" : "Car daddy"
                     }
                 ],
                 "option_selected": false,
@@ -139,6 +151,10 @@
                     {
                         "type" : "image",
                         "content" : "https://i.imgur.com/6PVVDHr.png"
+                    },
+                    {
+                        "type" : "text",
+                        "content" : "Sugar daddy"
                     }
                 ],
                 "option_selected": false,
@@ -150,6 +166,10 @@
                     {
                         "type" : "image",
                         "content" : "https://i.imgur.com/fAuNe.png"
+                    },
+                    {
+                        "type" : "text",
+                        "content" : "Gold digger"
                     }
                 ],
                 "option_selected": false,
@@ -998,6 +1018,10 @@
                 "option_id": 1,
                 "option_content": [
                     {
+                        "type" : "text",
+                        "content" : "heihei"
+                    },
+                    {
                         "type" : "image",
                         "content" : "https://i.imgur.com/BggB6hp.jpg"
                     }
@@ -1008,6 +1032,10 @@
             {
                 "option_id": 2,
                 "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "haha"
+                    },
                     {
                         "type" : "image",
                         "content" : "https://i.imgur.com/erAVxGl.jpg"
@@ -1020,6 +1048,10 @@
                 "option_id": 3,
                 "option_content": [
                     {
+                        "type" : "text",
+                        "content" : "xixi"
+                    },
+                    {
                         "type" : "image",
                         "content" : "https://i.imgur.com/Y9TQ5rn.jpg"
                     }
@@ -1030,6 +1062,10 @@
             {
                 "option_id": 4,
                 "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "houhou"
+                    },
                     {
                         "type" : "image",
                         "content" : "https://i.imgur.com/HdqWrqt.jpg"

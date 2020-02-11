@@ -8,7 +8,7 @@
                 <label for="email_input">Email</label>
             </span>
             <p-message severity="error" text="Valid email is required"
-                *ngIf="!loginForm.controls['email'].valid&&loginForm.controls['email'].dirty">
+                *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].touched && loginForm.controls['email'].dirty">
             </p-message>
 
             <h3>Name</h3>
@@ -22,7 +22,7 @@
 
             <br />
             <p-footer>
-                <button pButton type="submit" icon="pi pi-play" label="Submit" class="ui-button-info"
+                <button pButton type="submit" icon="pi pi-play" label="Start" class="ui-button-info"
                     style="margin-right: .25em" [disabled]="loginForm.invalid"></button>
             </p-footer>
         </p-panel>
@@ -44,7 +44,7 @@
         </div>
         <div class="ui-g-6"></div>
         <div class="ui-g-3 doNotPrint" id="timer" [ngStyle]="{color : timeLeft >= 60 ? 'green' : 'red'}">
-            <span *ngIf="timeLeft >= 60">{{timeLeft * 1000 | date:'mm:ss'}} left</span>
+            {{timeLeft * 1000 | date:'mm:ss'}} left
         </div>
         <div class="ui-g-12" style="font-style: italic;" *ngIf="!quizSubmitted">
             <p><span class="titleText">Finished question(s): </span><span style="font-size: 1.4em;"
@@ -63,44 +63,50 @@
                         Question {{i + 1}} ({{getQuestionType(q.type)}})
                     </p-header>
 
-                    <div *ngFor="let q_sub of q.question_content">
+                    <div *ngFor="let q_sub of q.question_content" style="font-weight: bold;">
                         <p *ngIf="q_sub.type == 'text'">{{q_sub.content}}</p>
-                        <img *ngIf="q_sub.type == 'image'" class="qImgBorder" [src]="q_sub.content" height="120px" />
+                        <img *ngIf="q_sub.type == 'image'" class="qImgBorder" [src]="q_sub.content" height="120px" style="margin-left: 2em;" />
                         <span *ngIf="q_sub.type == 'code'"><code><pre>{{q_sub.content}}</pre></code></span>
                     </div>
 
                     <p-footer>
                         <div *ngIf="q.type == 'tf'">
-                            <div *ngFor="let option of q.options">
+                            <div *ngFor="let option of q.options" style="display: flex; align-items: flex-start; margin-bottom: 1em;">
                                 <p-radioButton [value]="option.option_id" [(ngModel)]="q.selected"></p-radioButton>
-                                {{option.option_content === true ? "True" : "False"}}
+                                <div style="display: flex; flex-direction: column; margin-left: 0.5em;">
+                                    {{option.option_content === true ? "True" : "False"}}
+                                </div>
                             </div>
                             <!-- <p style="font-weight: bold;">Selected Value : {{getTfSelectedContent(i, q.selected)}}</p> -->
                         </div>
                         <div *ngIf="q.type == 'sc'">
-                            <div *ngFor="let option of q.options">
+                            <div *ngFor="let option of q.options" style="display: flex; align-items: flex-start; margin-bottom: 1em;">
                                 <p-radioButton [value]="option.option_id" [(ngModel)]="q.selected"></p-radioButton>
-                                <span *ngFor="let opt_sub of option.option_content">
-                                    <span *ngIf="opt_sub.type == 'text'"> {{opt_sub.content}}</span>
-                                    <img *ngIf="opt_sub.type == 'image'" class="qImgBorder" [src]="opt_sub.content" width="120px" style="margin-left: 1em;" />
-                                    <span *ngIf="opt_sub.type == 'code'" style="padding-left: 1em;"><code>{{opt_sub.content}}</code></span>
-                                </span>
+                                <div style="display: flex; flex-direction: column; margin-left: 0.5em;">
+                                    <div *ngFor="let opt_sub of option.option_content">
+                                        <p *ngIf="opt_sub.type == 'text'"> {{opt_sub.content}}</p>
+                                        <img *ngIf="opt_sub.type == 'image'" class="qImgBorder" [src]="opt_sub.content" width="120px" />
+                                        <p *ngIf="opt_sub.type == 'code'"><code>{{opt_sub.content}}</code></p>
+                                    </div>
+                                </div>
                             </div>
                             <!-- <p style="font-weight: bold;">Selected Value : {{(getScContent(i, q.selected))}}</p> -->
                         </div>
                         <div *ngIf="q.type == 'mc'">
-                            <div *ngFor="let option of q.options">
+                            <div *ngFor="let option of q.options" style="display: flex; align-items: flex-start; margin-bottom: 1em;">
                                 <p-checkbox [value]="option.option_id" [(ngModel)]="q.selected"></p-checkbox>
-                                <span *ngFor="let opt_sub of option.option_content">
-                                    <span *ngIf="opt_sub.type == 'text'"> {{opt_sub.content}}</span>
-                                    <img *ngIf="opt_sub.type == 'image'" class="qImgBorder" [src]="opt_sub.content" width="120px" style="margin-left: 1em;" />
-                                    <span *ngIf="opt_sub.type == 'code'" style="padding-left: 1em;"><code>{{opt_sub.content}}</code></span>
-                                </span>
+                                <div style="display: flex; flex-direction: column; margin-left: 0.5em;">
+                                    <div *ngFor="let opt_sub of option.option_content">
+                                        <p *ngIf="opt_sub.type == 'text'"> {{opt_sub.content}}</p>
+                                        <img *ngIf="opt_sub.type == 'image'" class="qImgBorder" [src]="opt_sub.content" width="120px" />
+                                        <p *ngIf="opt_sub.type == 'code'"><code>{{opt_sub.content}}</code></p>
+                                    </div>
+                                </div>
                             </div>
                             <!-- <p style="font-weight: bold;">Selected Value(s) : <span
-                                                            *ngIf="q.selected.length === 0">None</span><span
-                                                            *ngIf="q.selected.length !== 0"><span *ngFor="let item of q.selected"
-                                                                style="margin-right:10px">{{getMcContent(i, item)}}</span></span></p> -->
+                                                                                                            *ngIf="q.selected.length === 0">None</span><span
+                                                                                                            *ngIf="q.selected.length !== 0"><span *ngFor="let item of q.selected"
+                                                                                                                style="margin-right:10px">{{getMcContent(i, item)}}</span></span></p> -->
                         </div>
             </p-footer>
             </p-panel>
@@ -130,40 +136,44 @@
                         [ngStyle]="{color : validateAns(i) ? 'green' : 'red'}">{{validateAns(i) ? "Correct" : "Wrong"}}</span>
                 </p-header>
                 
-                <div *ngFor="let q_sub of q.question_content">
+                <div *ngFor="let q_sub of q.question_content" style="font-weight: bold;">
                     <p *ngIf="q_sub.type == 'text'">{{q_sub.content}}</p>
-                    <img *ngIf="q_sub.type == 'image'" class="qImgBorder" [src]="q_sub.content" height="120px" />
+                    <img *ngIf="q_sub.type == 'image'" class="qImgBorder" [src]="q_sub.content" height="120px" style="margin-left: 2em;" />
                     <span *ngIf="q_sub.type == 'code'"><code><pre>{{q_sub.content}}</pre></code></span>
                 </div>
 
                 <p-footer>
                     <div *ngIf="q.type == 'tf'">
-                        <div *ngFor="let option of q.options">
-                            <p-radioButton [disabled]="true" [value]="option.option_id" [(ngModel)]="q.selected">
-                            </p-radioButton>
-                            <span
-                                [ngStyle]="{color : getSumOptColor(i, option.option_id), fontWeight : getSumOptWeight(i, option.option_id)}">
-                                {{option.option_content === true ? "True" : "False"}}</span>
+                        <div *ngFor="let option of q.options" style="display: flex; align-items: flex-start; margin-bottom: 1em;">
+                            <p-radioButton [disabled]="true" [value]="option.option_id" [(ngModel)]="q.selected"></p-radioButton>
+                            <div style="display: flex; flex-direction: column; margin-left: 0.5em;">
+                                <span [ngStyle]="{color : getSumOptColor(i, option.option_id), fontWeight : getSumOptWeight(i, option.option_id)}">
+                                    {{option.option_content === true ? "True" : "False"}}</span>
+                            </div>
                         </div>
                     </div>
                     <div *ngIf="q.type == 'sc'">
-                        <div *ngFor="let option of q.options">
+                        <div *ngFor="let option of q.options" style="display: flex; align-items: flex-start; margin-bottom: 1em;">
                             <p-radioButton [disabled]="true" [value]="option.option_id" [(ngModel)]="q.selected"></p-radioButton>
-                            <span *ngFor="let opt_sub of option.option_content" [ngStyle]="{color : getSumOptColor(i, option.option_id), fontWeight : getSumOptWeight(i, option.option_id)}">
-                                <span *ngIf="opt_sub.type == 'text'"> {{opt_sub.content}}</span>
-                                <img *ngIf="opt_sub.type == 'image'" class="qImgBorder" [ngStyle]="{borderColor : getSumOptColor(i, option.option_id) == 'inherit' ? 'grey' : getSumOptColor(i, option.option_id)}" [src]="opt_sub.content" width="120px" style="margin-left: 1em;" />
-                                <span *ngIf="opt_sub.type == 'code'" style="padding-left: 1em;"><code>{{opt_sub.content}}</code></span>
-                            </span>
+                            <div style="display: flex; flex-direction: column; margin-left: 0.5em;">
+                                <div *ngFor="let opt_sub of option.option_content" [ngStyle]="{color : getSumOptColor(i, option.option_id), fontWeight : getSumOptWeight(i, option.option_id)}">
+                                    <p *ngIf="opt_sub.type == 'text'"> {{opt_sub.content}}</p>
+                                    <img *ngIf="opt_sub.type == 'image'" class="qImgBorder" [ngStyle]="{borderColor : getSumOptColor(i, option.option_id) == 'inherit' ? 'grey' : getSumOptColor(i, option.option_id)}" [src]="opt_sub.content" width="120px" />
+                                    <p *ngIf="opt_sub.type == 'code'"><code>{{opt_sub.content}}</code></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div *ngIf="q.type == 'mc'">
-                        <div *ngFor="let option of q.options">
+                        <div *ngFor="let option of q.options" style="display: flex; align-items: flex-start; margin-bottom: 1em;">
                             <p-checkbox [disabled]="true" [value]="option.option_id" [(ngModel)]="q.selected"></p-checkbox>
-                            <span *ngFor="let opt_sub of option.option_content" [ngStyle]="{color : getSumOptColor(i, option.option_id), fontWeight : getSumOptWeight(i, option.option_id)}">
-                                <span *ngIf="opt_sub.type == 'text'"> {{opt_sub.content}}</span>
-                                <img *ngIf="opt_sub.type == 'image'" class="qImgBorder" [ngStyle]="{borderColor : getSumOptColor(i, option.option_id) == 'inherit' ? 'grey' : getSumOptColor(i, option.option_id)}" [src]="opt_sub.content" width="120px" style="margin-left: 1em;" />
-                                <span *ngIf="opt_sub.type == 'code'" style="padding-left: 1em;"><code>{{opt_sub.content}}</code></span>
-                            </span>
+                            <div style="display: flex; flex-direction: column; margin-left: 0.5em;">
+                                <div *ngFor="let opt_sub of option.option_content" [ngStyle]="{color : getSumOptColor(i, option.option_id), fontWeight : getSumOptWeight(i, option.option_id)}">
+                                    <p *ngIf="opt_sub.type == 'text'"> {{opt_sub.content}}</p>
+                                    <img *ngIf="opt_sub.type == 'image'" class="qImgBorder" [ngStyle]="{borderColor : getSumOptColor(i, option.option_id) == 'inherit' ? 'grey' : getSumOptColor(i, option.option_id)}" [src]="opt_sub.content" width="120px" />
+                                    <p *ngIf="opt_sub.type == 'code'"><code>{{opt_sub.content}}</code></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </p-footer>

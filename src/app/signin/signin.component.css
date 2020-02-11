@@ -29,13 +29,13 @@
 .imgBorder {
   border-radius: 15%;
   border-style: solid;
-  border-width: 5px;
+  border-width: 3px;
 }
 
 .qImgBorder {
   border-radius: 15%;
   border-style: solid;
-  border-width: 5px;
+  border-width: 3px;
   border-color: grey;
 }
 

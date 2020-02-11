@@ -53,7 +53,7 @@ export class SigninComponent implements OnInit {
       this.chooseQuestions();
 
     });
-    this.timeLeft = 600;
+    this.timeLeft = 120;
     this.currQuestionId = 0;
   }
 
@@ -70,11 +70,13 @@ export class SigninComponent implements OnInit {
     console.log(this.email);
     console.log(this.name);
     this.startTimer();
-
   }
 
   startTimer() {
     this.interval = setInterval(() => {
+      if (this.timeLeft == 60) {
+        this.messageService.add({ severity: 'error', summary: '1 MINUTE LEFT!', detail: 'You have only one minute left for this quiz!' });
+      }
       if (this.timeLeft > 0) {
         this.timeLeft--;
       } else {
@@ -379,6 +381,14 @@ export class SigninComponent implements OnInit {
   }
 
   reDoTest() {
-    location.reload();
+    // location.reload();
+
+    this.submitted = true;
+    this.timeLeft = 120;
+    this.quizSubmitted = false;
+    clearInterval(this.interval);
+    this.startTimer();
+    this.chooseQuestions();
+    this.currQuestionId = 0;
   }
 }
