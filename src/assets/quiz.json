@@ -109,7 +109,7 @@
                     }
                 ],
                 "option_selected": false,
-                "option_answer": false
+                "option_answer": true
             },
             {
                 "option_id": 2,
@@ -120,23 +120,38 @@
                     }
                 ],
                 "option_selected": false,
-                "option_answer": true
+                "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "image",
+                        "content" : "https://i.imgur.com/ghKd4tl.jpg"
+                    }
+                ],
+                "option_selected": false,
+                "option_answer": true
+            },
+            {
+                "option_id": 4,
+                "option_content": [
+                    {
+                        "type" : "image",
+                        "content" : "https://i.imgur.com/6PVVDHr.png"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
-                "option_id": 4,
-                "option_content": "fadsfdasfdsa",
-                "option_selected": false,
-                "option_answer": true
-            },
-            {
                 "option_id": 5,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "image",
+                        "content" : "https://i.imgur.com/fAuNe.png"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             }
@@ -145,35 +160,69 @@
     {
         "question_id": 15016,
         "type": "sc",
-        "question_content": "Implement policies and procedures for authorizing access to electronic protected health information.",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Implement policies and procedures for authorizing access to electronic protected health information."
+            },
+            {
+                "type" : "image",
+                "content" : "https://i.imgur.com/xndUSv0.jpg"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "safadsfsa97843975gfgd"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "fadsfdasfdsa"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "bcvmnmoookmxvc"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "zxczxadssqe"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 5,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "ytyiuouetwtvcjvmdjjds"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             }
@@ -182,29 +231,54 @@
     {
         "question_id": 15018,
         "type": "sc",
-        "question_content": "All sucessful and unsuccessful logins need to be monitored and reviewed by Security and  IT Management ",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Inside which HTML element do we put the JavaScript?"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "code",
+                        "content" : "<javascript>"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "code",
+                        "content" : "<js>"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "code",
+                        "content" : "<script>"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "code",
+                        "content" : "<scripting>"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             }
@@ -213,7 +287,12 @@
     {
         "question_id": 15020,        
         "type": "tf",
-        "question_content": "FortiCASB audit trail enabled automatically by default",
+        "question_content": [
+            {
+                "type" : "image",
+                "content" : "https://i.imgur.com/QbS0AHm.jpg"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
@@ -232,7 +311,16 @@
     {
         "question_id": 15022,        
         "type": "tf",
-        "question_content": "Checks to ensure FortiCASB policy should be enabled and properly configured",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Checks to ensure FortiCASB policy should be enabled and properly configured"
+            },
+            {
+                "type" : "image",
+                "content" : "https://i.imgur.com/UiH8X9q.jpg"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
@@ -251,7 +339,16 @@
     {
         "question_id": 15024,
         "type": "tf",
-        "question_content": "Checks to ensure that any inactive accounts over 90 days old are either removed or disabled.",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Checks to ensure that any inactive accounts over 90 days old are either removed or disabled."
+            },
+            {
+                "type" : "image",
+                "content" : "https://i.imgur.com/0RxU4Gs.jpg"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
@@ -270,7 +367,20 @@
     {
         "question_id": 15026,
         "type": "tf",
-        "question_content": "Track the following activities: \n• create account\n• privileged elevation\n• changes to administrative accounts",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Is it the correct JavaScript syntax to change the content of the HTML element below?"
+            },
+            {
+                "type" : "code",
+                "content" : "<p id='demo'>This is a demonstration.</p>"
+            },
+            {
+                "type" : "code",
+                "content" :"document.getElementById('demo').innerHTML = 'Hello World!';"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
@@ -289,7 +399,16 @@
     {
         "question_id": 15028,
         "type": "tf",
-        "question_content": "Checks if cardholder data have exceeded retention time",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Checks if cardholder data have exceeded retention time"
+            },
+            {
+                "type" : "image",
+                "content" : "https://i.imgur.com/fNJmFT3.jpg"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
@@ -308,7 +427,16 @@
     {
         "question_id": 15030,
         "type": "tf",
-        "question_content": "Track all activities of individual user accesses to cardholder data",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Track all activities of individual user accesses to cardholder data."
+            },
+            {
+                "type" : "image",
+                "content" : "https://i.imgur.com/Gc6NDwR.jpg"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
@@ -327,26 +455,44 @@
     {
         "question_id": 15032,
         "type": "tf",
-        "question_content": "Track all activities of individual with root or administrative privileges",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Is it the correct syntax for referring to an external script called 'xxx.js'?"
+            },
+            {
+                "type" : "code",
+                "content" : "<script src='xxx.js'>"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
                 "option_content": true,
                 "option_selected": false,
-                "option_answer": false
+                "option_answer": true
             },
             {
                 "option_id": 2,
                 "option_content": false,
                 "option_selected": false,
-                "option_answer": true
+                "option_answer": false
             }
         ]
     },
     {
         "question_id": 15034,
         "type": "tf",
-        "question_content": "FortiCASB store audit trail for three years and with one year  immediately available for analysis ",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Is it the correct syntax for writing 'Hello World' in an alert box??"
+            },
+            {
+                "type" : "code",
+                "content" : "alert(\"Hello World\")"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
@@ -365,7 +511,16 @@
     {
         "question_id": 15036,
         "type": "tf",
-        "question_content": "Checks to ensure cardholder data should be only accessable within the orgnization",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Checks to ensure cardholder data should be only accessable within the orgnization"
+            },
+            {
+                "type" : "image",
+                "content" : "https://i.imgur.com/rFCJCGK.jpg"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
@@ -384,29 +539,54 @@
     {
         "question_id": 15038,
         "type": "sc",
-        "question_content": "Track failed attempts to access cloud resources",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Track failed attempts to access cloud resources"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "afsdfd"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "bvcmncvj"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "qwuoigdomnkbv"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "nb bvnbio"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             }
@@ -415,29 +595,54 @@
     {
         "question_id": 15040,
         "type": "sc",
-        "question_content": "List of categorized sanctioned and unsanctioned cloud applications in use as well as risk score ",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "List of categorized sanctioned and unsanctioned cloud applications in use as well as risk score"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "vmmk9"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "vxcnhdiewfhiw"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "bvcmnzfxiufieaw"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "uhh8t834ujgf"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             }
@@ -446,29 +651,54 @@
     {
         "question_id": 15042,
         "type": "sc",
-        "question_content": "Track changes to user account, including add, delete/deactive account, change of account priviledge ",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Track changes to user account, including add, delete/deactive account, change of account priviledge"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "image",
+                        "content" : "https://i.imgur.com/Q9oS3o1.jpg"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "image",
+                        "content" : "https://i.imgur.com/aHhenkO.jpg"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "image",
+                        "content" : "https://i.imgur.com/YhkYTzi.jpg"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "image",
+                        "content" : "https://i.imgur.com/hSsmdWg.jpg"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             }
@@ -477,29 +707,54 @@
     {
         "question_id": 15044,
         "type": "sc",
-        "question_content": "List all active security policy, description and risk level ",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "List all active security policy, description and risk level"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "vcmnsfnj"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "gfmkihnijm"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "b15c56jh"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "4695jmkg"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             }
@@ -508,29 +763,54 @@
     {
         "question_id": 15046,
         "type": "sc",
-        "question_content": "Track access to sensitive data",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Track access to sensitive data"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "f9jm34it"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "4965inf b"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : " b52v23254vc"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "nvbbfj9t5u j5i"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             }
@@ -539,29 +819,54 @@
     {
         "question_id": 15048,
         "type": "sc",
-        "question_content": "Checks if Personal data have exceeded retention time",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "What is the correct way to write a JavaScript array?"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "code",
+                        "content" : "var colors = (1:\"red\", 2:\"green\", 3:\"blue\")"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "code",
+                        "content" : "var colors = 1 = (\"red\"), 2 = (\"green\"), 3 = (\"blue\")"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "code",
+                        "content" : "var colors = [\"red\", \"green\", \"blue\"]"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "code",
+                        "content" : "var colors = \"red\", \"green\", \"blue\""
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             }
@@ -570,29 +875,54 @@
     {
         "question_id": 15050,
         "type": "sc",
-        "question_content": "Identify what personal data the company  has and where it resides.",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Identify what personal data the company  has and where it resides."
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "gklgfdnkzm,.fa"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "vcxzxzcmvnqrwe"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "afsdz  q213"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "2265w45"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             }
@@ -601,29 +931,54 @@
     {
         "question_id": 15052,
         "type": "sc",
-        "question_content": "Track all access to personal data",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Track all access to personal data"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "u4i905mnkbm"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "fasdd8u67nhg"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "nbvv8349ujbhgf"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "nvm58458329nkfd"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             }
@@ -632,29 +987,54 @@
     {
         "question_id": 15054,
         "type": "sc",
-        "question_content": "List all personal data which have public access",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "List all personal data which have public access"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "image",
+                        "content" : "https://i.imgur.com/BggB6hp.jpg"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "image",
+                        "content" : "https://i.imgur.com/erAVxGl.jpg"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "image",
+                        "content" : "https://i.imgur.com/Y9TQ5rn.jpg"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "image",
+                        "content" : "https://i.imgur.com/HdqWrqt.jpg"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             }
@@ -663,29 +1043,54 @@
     {
         "question_id": 15056,
         "type": "sc",
-        "question_content": "Track all personal files that have been uploaded into unsanctioned cloud apps which located outside of EU",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Track all personal files that have been uploaded into unsanctioned cloud apps which located outside of EU"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "f9djigwqjrei"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "nbkmmktr"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "12312bgvfkh"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "zcfdjkjloui46"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             }
@@ -694,29 +1099,54 @@
     {
         "question_id": 15058,
         "type": "sc",
-        "question_content": "Track all activities of individual with root or administrative privileges",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Track all activities of individual with root or administrative privileges"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "bvxcb87r2eu8ivds"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "fdsasdbvcxb534"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "fdasfdsu766"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "nmbjghf7t5s"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             }
@@ -725,29 +1155,54 @@
     {
         "question_id": 15060,
         "type": "sc",
-        "question_content": "FortiCASB stored audit records in cloud based storage outside customer's environment",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "FortiCASB stored audit records in cloud based storage outside customer's environment"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "bvmb989ut4"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "vcxvxcz63453"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "vcx7567ghmnhgmh"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "zsdqwe76i9lk"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             }
@@ -756,35 +1211,65 @@
     {
         "question_id": 15062,
         "type": "mc",
-        "question_content": "Track changes to user account, including add, delete/deactive account, change of account priviledge ",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Track changes to user account, including add, delete/deactive account, change of account priviledge"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "v1cx21df554"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "nmbyr54y34"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "vcxger25234"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "poipy34t534tfg4t"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 5,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "gvgdfsdgfsd"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             }
@@ -793,35 +1278,65 @@
     {
         "question_id": 15064,
         "type": "mc",
-        "question_content": "Display content of audit record",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Display content of audit record"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "v12c1f48ty48"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "nbvnbmjy5896"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "cvcbvety45y7jyhn"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "brty5474ujh"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 5,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "iurew6y273rgc"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             }
@@ -830,35 +1345,65 @@
     {
         "question_id": 15066,
         "type": "mc",
-        "question_content": "Track all security alerts",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Track all security alerts"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "vcmnsfnj"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "grtj37548uy34t"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "w53jhgjfgj"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "thnbvgrty456"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 5,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "hg6546y5"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             }
@@ -867,35 +1412,65 @@
     {
         "question_id": 15068,
         "type": "mc",
-        "question_content": "Track all activities of individual with root or administrative privileges",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Track all activities of individual with root or administrative privileges"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "nbvmn346hgjfh"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "bnbvt48349t34"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "cvbcvbnnytrdfasgf"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "ktfra432"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 5,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "fdsfadsfdsfas"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             }
@@ -904,35 +1479,65 @@
     {
         "question_id": 15070,
         "type": "mc",
-        "question_content": "Track all security alerts",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Track all security alerts"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "bvcnmbnruhwe"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "cxzereqwrewqr"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "jhmktjk45y4"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "cvxgyweuri"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 5,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "plmkljuigf"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             }
@@ -941,41 +1546,76 @@
     {
         "question_id": 15072,
         "type": "mc",
-        "question_content": "Track changes to user account, including add, delete/deactive account, change of account priviledge ",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Track changes to user account, including add, delete/deactive account, change of account priviledge "
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "vcmnsfnj"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "vcxngra32u89fdsa"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "fdnjhaurwq3"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "kjhji9t43yh82"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 5,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "riueuiqw972535"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id" : 6,
-                "option_content" : "vmbkbnk",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "iou06789uujfvSD"
+                    }
+                ],
                 "option_selected" : false,
                 "option_answer" : true
             }
@@ -984,35 +1624,65 @@
     {
         "question_id": 15074,
         "type": "mc",
-        "question_content": "Track all security alerts",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Track all security alerts"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "bjnt4734u8rt"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "y4590jmhfg"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "oi989jnvkxcj"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "rtq634y8gufhvc"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 5,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "trfdsui5234"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             }
@@ -1021,35 +1691,65 @@
     {
         "question_id": 15076,
         "type": "mc",
-        "question_content": "Track all activities of individual with root or administrative privileges",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Track all activities of individual with root or administrative privileges"
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "9jjkfghirw"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "25sdfgsdga"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "fhdsjkywr"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "mjhpoyw8etr"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 5,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "zcvxfnj    3218"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             }
@@ -1058,35 +1758,65 @@
     {
         "question_id": 15078,
         "type": "mc",
-        "question_content": "Ensure the confidentiality, integrity, and availability of all e-PHI they create, receive, maintain or transmit;\nThe Security Rule defines “confidentiality” to mean that e-PHI is not available or disclosed to unauthorized persons.",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Ensure the confidentiality, integrity, and availability of all e-PHI they create, receive, maintain or transmit;\nThe Security Rule defines “confidentiality” to mean that e-PHI is not available or disclosed to unauthorized persons."
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "bnmkt348"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "6489jhgk"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "bjifhdus1"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "abgfjgi943"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 5,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "sdahu89r"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             }
@@ -1095,35 +1825,65 @@
     {
         "question_id": 15080,
         "type": "mc",
-        "question_content": "Ensure the confidentiality, integrity, and availability of all e-PHI they create, receive, maintain or transmit;\nThe Security Rule defines “confidentiality” to mean that e-PHI is not available or disclosed to unauthorized persons.",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Ensure the confidentiality, integrity, and availability of all e-PHI they create, receive, maintain or transmit;\nThe Security Rule defines “confidentiality” to mean that e-PHI is not available or disclosed to unauthorized persons."
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "569ujhmg"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "chry32q"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "jfgoj30r5"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "1234fdghfd"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 5,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "jhmgy354"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             }
@@ -1132,35 +1892,65 @@
     {
         "question_id": 15082,
         "type": "mc",
-        "question_content": "Ensure the confidentiality, integrity, and availability of all e-PHI they create, receive, maintain or transmit;\nThe Security Rule defines “confidentiality” to mean that e-PHI is not available or disclosed to unauthorized persons.",
+        "question_content": [
+            {
+                "type" : "text",
+                "content" : "Ensure the confidentiality, integrity, and availability of all e-PHI they create, receive, maintain or transmit;\nThe Security Rule defines “confidentiality” to mean that e-PHI is not available or disclosed to unauthorized persons."
+            }
+        ],
         "options": [
             {
                 "option_id": 1,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "fnghq23"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 2,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "cmnkijhhtgrsfnj"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 3,
-                "option_content": "afsdfd",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "75thngdfgfs"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             },
             {
                 "option_id": 4,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "kjyhoiyu"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": true
             },
             {
                 "option_id": 5,
-                "option_content": "fadsfdasfdsa",
+                "option_content": [
+                    {
+                        "type" : "text",
+                        "content" : "qwrejhg8"
+                    }
+                ],
                 "option_selected": false,
                 "option_answer": false
             }

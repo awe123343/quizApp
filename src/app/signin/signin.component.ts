@@ -375,4 +375,8 @@ export class SigninComponent implements OnInit {
 
     return score;
   }
+
+  reDoTest() {
+    location.reload();
+  }
 }
