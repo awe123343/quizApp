@@ -1,323 +1,199 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<style>
-  :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 8px 0;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .spacer {
-    flex: 1;
-  }
-
-  .toolbar {
-    height: 60px;
-    margin: -8px;
-    display: flex;
-    align-items: center;
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-  }
-
-  .toolbar img {
-    margin: 0 16px;
-  }
-
-  .toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 16px;
-  }
-
-  .toolbar #twitter-logo:hover {
-    opacity: 0.8;
-  }
-
-  .content {
-    display: flex;
-    margin: 32px auto;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  svg.material-icons {
-    height: 24px;
-    width: auto;
-  }
-
-  svg.material-icons:not(:last-child) {
-    margin-right: 8px;
-  }
-
-  .card svg.material-icons path {
-    fill: #888;
-  }
-
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 16px;
-  }
-
-  .card {
-    border-radius: 4px;
-    border: 1px solid #eee;
-    background-color: #fafafa;
-    height: 40px;
-    width: 200px;
-    margin: 0 8px 16px;
-    padding: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.2s ease-in-out;
-    line-height: 24px;
-  }
-
-  .card-container .card:not(:last-child) {
-    margin-right: 0;
-  }
-
-  .card.card-small {
-    height: 16px;
-    width: 168px;
-  }
-
-  .card-container .card:not(.highlight-card) {
-    cursor: pointer;
-  }
-
-  .card-container .card:not(.highlight-card):hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 17px rgba(black, 0.35);
-  }
-
-  .card-container .card:not(.highlight-card):hover .material-icons path {
-    fill: rgb(105, 103, 103);
-  }
-
-  .card.highlight-card {
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-    border: none;
-    width: auto;
-    min-width: 30%;
-    position: relative;
-  }
-
-  .card.card.highlight-card span {
-    margin-left: 60px;
-  }
-
-  svg#rocket {
-    width: 80px;
-    position: absolute;
-    left: -10px;
-    top: -24px;
-  }
-
-  svg#rocket-smoke {
-    height: 100vh;
-    position: absolute;
-    top: 10px;
-    right: 180px;
-    z-index: -10;
-  }
-
-  a,
-  a:visited,
-  a:hover {
-    color: #1976d2;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #125699;
-  }
-
-  .terminal {
-    position: relative;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 6px;
-    padding-top: 45px;
-    margin-top: 8px;
-    overflow: hidden;
-    background-color: rgb(15, 15, 16);
-  }
-
-  .terminal::before {
-    content: "\2022 \2022 \2022";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 4px;
-    background: rgb(58, 58, 58);
-    color: #c2c3c4;
-    width: 100%;
-    font-size: 2rem;
-    line-height: 0;
-    padding: 14px 0;
-    text-indent: 4px;
-  }
-
-  .terminal pre {
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-    color: white;
-    padding: 0 1rem 1rem;
-    margin: 0;
-  }
-
-  .circle-link {
-    height: 40px;
-    width: 40px;
-    border-radius: 40px;
-    margin: 8px;
-    background-color: white;
-    border: 1px solid #eeeeee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: 1s ease-out;
-  }
-
-  .circle-link:hover {
-    transform: translateY(-0.25rem);
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  footer {
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    line-height: 20px;
-  }
-
-  footer a {
-    display: flex;
-    align-items: center;
-  }
-
-  .github-star-badge {
-    color: #24292e;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    padding: 3px 10px;
-    border: 1px solid rgba(27, 31, 35, .2);
-    border-radius: 3px;
-    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
-    margin-left: 4px;
-    font-weight: 600;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  }
-
-  .github-star-badge:hover {
-    background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
-    border-color: rgba(27, 31, 35, .35);
-    background-position: -.5em;
-  }
-
-  .github-star-badge .material-icons {
-    height: 16px;
-    width: 16px;
-    margin-right: 4px;
-  }
-
-  svg#clouds {
-    position: fixed;
-    bottom: -160px;
-    left: -230px;
-    z-index: -10;
-    width: 1920px;
-  }
-
-
-  /* Responsive Styles */
-  @media screen and (max-width: 767px) {
-
-    .card-container>*:not(.circle-link),
-    .terminal {
-      width: 100%;
-    }
-
-    .card:not(.highlight-card) {
-      height: 16px;
-      margin: 8px 0;
-    }
-
-    .card.highlight-card span {
-      margin-left: 72px;
-    }
-
-    svg#rocket-smoke {
-      right: 120px;
-      transform: rotate(-5deg);
-    }
-  }
-
-  @media screen and (max-width: 575px) {
-    svg#rocket-smoke {
-      display: none;
-      visibility: hidden;
-    }
-  }
-
-  @media print {
-    .doNotPrint {
-      display: none !important;
-    }
-  }
-</style>
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <img height="50" alt="Ideal Concepts Logo" src="/assets/idc_logo.png" (click)="reDoTest()"/>
+  <img height="50" alt="Ideal Concepts Logo" src="/assets/idc_logo.png" (click)="reloadTest()"/>
   <span class="doNotPrint">Welcome to test</span>
 
 </div>
 
 
+<div id="loginbox" *ngIf="!submitted">
+  <!-- <div id="loginbox" style="display:none"> -->
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <p-panel header="User Information">
+          <h3>Email</h3>
+          <span class="ui-float-label" style="margin-bottom: 1em;">
+              <input id="email_input" formControlName="email" type="email" size="30" email pInputText required>
+              <label for="email_input">Email</label>
+          </span>
+          <p-message severity="error" text="Valid email is required"
+              *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].touched && loginForm.controls['email'].dirty">
+          </p-message>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+          <h3>Name</h3>
+          <span class="ui-float-label" style="margin-bottom: 1em;">
+              <input id="name_input" formControlName="name" type="text" size="30" pInputText required>
+              <label for="name_input">Name</label>
+          </span>
+          <p-message styleClass="marginTop: 20;" severity="error" text="Name is required"
+              *ngIf="!loginForm.controls['name'].valid&&loginForm.controls['name'].dirty">
+          </p-message>
+
+          <br />
+          <p-footer>
+              <button pButton type="submit" icon="pi pi-play" label="Start" class="ui-button-info"
+                  style="margin-right: .25em" [disabled]="loginForm.invalid"></button>
+          </p-footer>
+      </p-panel>
+  </form>
+</div>
 
 
+<!-- <div id="quizbox"> -->
+<div id="quizbox" *ngIf="submitted">
+  <div class="doNotPrint">
+      <p-toast styleClass="margin-top: 200px"></p-toast>
+  </div>
 
-<router-outlet></router-outlet>
+  <div class="ui-g">
+      <div id="user_info" class="ui-g-3">
+          <p><span class="titleText">Email: </span><span style="font-size: 1.4em;">{{email}}</span></p>
+          <p><span class="titleText">Name: </span><span style="font-size: 1.4em;">{{name}}</span></p>
+      </div>
+      <div class="ui-g-6"></div>
+      <div class="ui-g-3 doNotPrint" id="timer" [ngStyle]="{color : timeLeft >= 60 ? 'green' : 'red'}">
+          {{timeLeft * 1000 | date:'mm:ss'}} left
+      </div>
+      <div class="ui-g-12" style="font-style: italic;" *ngIf="!quizSubmitted">
+          <p><span class="titleText">Finished question(s): </span><span style="font-size: 1.4em;"
+                  *ngFor="let q_done of getQuestionTouched()">{{q_done}} </span><span
+                  class="titleText">({{getQuestionTouched().length}} of 10)</span></p>
+      </div>
+  </div>
+  <div id="quizContent" *ngIf="!quizSubmitted" class="doNotPrint">
+      <div *ngFor="let q of questionToDo; let i = index">
+          <div *ngIf="i == currQuestionId">
+
+              <p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+
+              <p-panel>
+                  <p-header style="font-weight: bold;">
+                      Question {{i + 1}} ({{getQuestionType(q.type)}})
+                  </p-header>
+
+                  <div *ngFor="let q_sub of q.question_content" style="font-weight: bold;">
+                      <p *ngIf="q_sub.type == 'text'">{{q_sub.content}}</p>
+                      <img *ngIf="q_sub.type == 'image'" class="qImgBorder" [src]="q_sub.content" height="120px" style="margin-left: 2em;" />
+                      <span *ngIf="q_sub.type == 'code'"><code><pre>{{q_sub.content}}</pre></code></span>
+                  </div>
+
+                  <p-footer>
+                      <div *ngIf="q.type == 'tf'">
+                          <div *ngFor="let option of q.options" style="display: flex; align-items: flex-start; margin-bottom: 1em;">
+                              <p-radioButton [value]="option.option_id" [(ngModel)]="q.selected"></p-radioButton>
+                              <div style="display: flex; flex-direction: column; margin-left: 0.5em;">
+                                  {{option.option_content === true ? "True" : "False"}}
+                              </div>
+                          </div>
+                          <!-- <p style="font-weight: bold;">Selected Value : {{getTfSelectedContent(i, q.selected)}}</p> -->
+                      </div>
+                      <div *ngIf="q.type == 'sc'">
+                          <div *ngFor="let option of q.options" style="display: flex; align-items: flex-start; margin-bottom: 1em;">
+                              <p-radioButton [value]="option.option_id" [(ngModel)]="q.selected"></p-radioButton>
+                              <div style="display: flex; flex-direction: column; margin-left: 0.5em;">
+                                  <div *ngFor="let opt_sub of option.option_content">
+                                      <p *ngIf="opt_sub.type == 'text'"> {{opt_sub.content}}</p>
+                                      <img *ngIf="opt_sub.type == 'image'" class="qImgBorder" [src]="opt_sub.content" width="120px" />
+                                      <p *ngIf="opt_sub.type == 'code'"><code>{{opt_sub.content}}</code></p>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- <p style="font-weight: bold;">Selected Value : {{(getScContent(i, q.selected))}}</p> -->
+                      </div>
+                      <div *ngIf="q.type == 'mc'">
+                          <div *ngFor="let option of q.options" style="display: flex; align-items: flex-start; margin-bottom: 1em;">
+                              <p-checkbox [value]="option.option_id" [(ngModel)]="q.selected"></p-checkbox>
+                              <div style="display: flex; flex-direction: column; margin-left: 0.5em;">
+                                  <div *ngFor="let opt_sub of option.option_content">
+                                      <p *ngIf="opt_sub.type == 'text'"> {{opt_sub.content}}</p>
+                                      <img *ngIf="opt_sub.type == 'image'" class="qImgBorder" [src]="opt_sub.content" width="120px" />
+                                      <p *ngIf="opt_sub.type == 'code'"><code>{{opt_sub.content}}</code></p>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- <p style="font-weight: bold;">Selected Value(s) : <span
+                                                                                                          *ngIf="q.selected.length === 0">None</span><span
+                                                                                                          *ngIf="q.selected.length !== 0"><span *ngFor="let item of q.selected"
+                                                                                                              style="margin-right:10px">{{getMcContent(i, item)}}</span></span></p> -->
+                      </div>
+          </p-footer>
+          </p-panel>
+
+          <div class="ui-g" style="margin-top: 2em; display: flex; justify-content: center;">
+              <button pButton style="margin-right: .5em; width:6.5em" (click)="questionSwitch(false)"
+                  [disabled]="currQuestionId == 0" icon="pi pi-arrow-left" label="Previous"></button>
+              <button pButton style="margin-right: .5em; width:6.5em" (click)="getFuncForNext(q.type, q.selected)"
+                  [disabled]="currQuestionId == 9" icon="pi pi-arrow-right" iconPos="right" label="Next"></button>
+              <button pButton style="margin-right: .5em; width:6.5em" (click)="questionSwitch(true)"
+                  [disabled]="currQuestionId == 9 || (q.selected && q.type != 'mc') || (q.type == 'mc' && q.selected.length !== 0)"
+                  icon="pi pi-angle-double-right" iconPos="right" label="Skip"></button>
+              <button pButton style="margin-right: .5em; width:6.5em" (click)="getFuncForSubmit()"
+                  *ngIf="currQuestionId == 9" icon="pi pi-cloud-upload" iconPos="right" label="Submit"></button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div id="summaryBox" *ngIf="quizSubmitted">
+  <h1 style="font-style: italic; text-align: center;">Score {{getScore()}}/10</h1>
+  <div *ngFor="let q of questionToDo; let i = index">
+      <div style="margin-bottom: 1em;">
+          <p-panel>
+              <p-header style="font-weight: bold;">
+                  Question {{i + 1}} ({{getQuestionType(q.type)}}) <span
+                      [ngStyle]="{color : validateAns(i) ? 'green' : 'red'}">{{validateAns(i) ? "Correct" : "Wrong"}}</span>
+              </p-header>
+              
+              <div *ngFor="let q_sub of q.question_content" style="font-weight: bold;">
+                  <p *ngIf="q_sub.type == 'text'">{{q_sub.content}}</p>
+                  <img *ngIf="q_sub.type == 'image'" class="qImgBorder" [src]="q_sub.content" height="120px" style="margin-left: 2em;" />
+                  <span *ngIf="q_sub.type == 'code'"><code><pre>{{q_sub.content}}</pre></code></span>
+              </div>
+
+              <p-footer>
+                  <div *ngIf="q.type == 'tf'">
+                      <div *ngFor="let option of q.options" style="display: flex; align-items: flex-start; margin-bottom: 1em;">
+                          <p-radioButton [disabled]="true" [value]="option.option_id" [(ngModel)]="q.selected"></p-radioButton>
+                          <div style="display: flex; flex-direction: column; margin-left: 0.5em;">
+                              <span [ngStyle]="{color : getSumOptColor(i, option.option_id), fontWeight : getSumOptWeight(i, option.option_id)}">
+                                  {{option.option_content === true ? "True" : "False"}}</span>
+                          </div>
+                      </div>
+                  </div>
+                  <div *ngIf="q.type == 'sc'">
+                      <div *ngFor="let option of q.options" style="display: flex; align-items: flex-start; margin-bottom: 1em;">
+                          <p-radioButton [disabled]="true" [value]="option.option_id" [(ngModel)]="q.selected"></p-radioButton>
+                          <div style="display: flex; flex-direction: column; margin-left: 0.5em;">
+                              <div *ngFor="let opt_sub of option.option_content" [ngStyle]="{color : getSumOptColor(i, option.option_id), fontWeight : getSumOptWeight(i, option.option_id)}">
+                                  <p *ngIf="opt_sub.type == 'text'"> {{opt_sub.content}}</p>
+                                  <img *ngIf="opt_sub.type == 'image'" class="qImgBorder" [ngStyle]="{borderColor : getSumOptColor(i, option.option_id) == 'inherit' ? 'grey' : getSumOptColor(i, option.option_id)}" [src]="opt_sub.content" width="120px" />
+                                  <p *ngIf="opt_sub.type == 'code'"><code>{{opt_sub.content}}</code></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div *ngIf="q.type == 'mc'">
+                      <div *ngFor="let option of q.options" style="display: flex; align-items: flex-start; margin-bottom: 1em;">
+                          <p-checkbox [disabled]="true" [value]="option.option_id" [(ngModel)]="q.selected"></p-checkbox>
+                          <div style="display: flex; flex-direction: column; margin-left: 0.5em;">
+                              <div *ngFor="let opt_sub of option.option_content" [ngStyle]="{color : getSumOptColor(i, option.option_id), fontWeight : getSumOptWeight(i, option.option_id)}">
+                                  <p *ngIf="opt_sub.type == 'text'"> {{opt_sub.content}}</p>
+                                  <img *ngIf="opt_sub.type == 'image'" class="qImgBorder" [ngStyle]="{borderColor : getSumOptColor(i, option.option_id) == 'inherit' ? 'grey' : getSumOptColor(i, option.option_id)}" [src]="opt_sub.content" width="120px" />
+                                  <p *ngIf="opt_sub.type == 'code'"><code>{{opt_sub.content}}</code></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </p-footer>
+          </p-panel>
+      </div>
+  </div>
+</div>
+</div>
+<div style="text-align: center; margin-bottom: 120px;" class="doNotPrint">
+  <button pButton *ngIf="quizSubmitted" type="submit" icon="pi pi-print" label="Print" class="ui-button-info"
+      (click)="printComponent()"></button>
+  <button pButton *ngIf="quizSubmitted" type="submit" icon="pi pi-refresh" label="Retry" class="ui-button-info"
+      (click)="reDoTest()" style="margin-left: 0.5em;"></button>
+</div>
