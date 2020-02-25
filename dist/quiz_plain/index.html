@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>IdcAssignment</title>
+    <!-- <base href="/"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="text/javascript" src="./run.js"></script>
+    <script src="https://kit.fontawesome.com/d4fe7c4703.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- <app-root></app-root>
+  <script type="text/javascript" src="./scripts//runtime-es2015.js" type="module"></script>
+  <script type="text/javascript" src="./scripts/runtime-es5.js" nomodule defer></script>
+  <script type="text/javascript" src="./scripts/polyfills-es5.js" nomodule defer></script>
+  <script type="text/javascript" src="./scripts/polyfills-es2015.js" type="module"></script>
+  <script type="text/javascript" src="./main.js" type="module"></script>
+  <script type="text/javascript" src="./scripts/main-es5.js" nomodule defer></script> -->
+
+    <!-- Toolbar -->
+    <div class="toolbar" role="banner">
+        <img height="50" alt="Ideal Concepts Logo" src="./assets/idc_logo.png" onclick="reloadTest()" />
+        <span class="doNotPrint">Welcome to test</span>
+    </div>
+
+    <div id="loginbox" class="qBoxB">
+        <form id="form" onsubmit="return submitForm(event)">
+
+            <div class="qrow" style="background-color: #f4f4f4;">
+                <p style="text-align: left;">User Information</p>
+            </div>
+            <div class="qrow">
+                <h3>Email</h3>
+                <input class="ui-inputtext" value="" id="email_input" name="email" type="email"
+                    placeholder="jdoe@idealconcepts.com" size=40
+                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required>
+                <h4 id="email_error" style="display: none; color: red;">Valid email is required!</h4>
+                <h3>Name</h3>
+                <input class="ui-inputtext" value="" id="name_input" name="name" type="text" size=40 required />
+                <h4 id="name_error" style="display: none; color: red;">Name is required!</h4>
+            </div>
+            <div class="startButtonRow">
+                <button id="infoSubmit" type="submit" class="ui-button" style="margin-right: .25em; width: 6em"
+                    disabled><i class="far fa-play-circle"></i> Start</button>
+            </div>
+
+        </form>
+    </div>
+
+    <div id="quizbox" style="display: none;">
+
+        <div class="grid-container" style="display: grid;">
+            <div id="user_info" class="ui-g-3" style="grid-column: 1; grid-row: 1;">
+                <p><span class="titleText">Email: </span><span id="emailFetched" style="font-size: 1.4em;"></span></p>
+                <p><span class="titleText">Name: </span><span id="nameFetched" style="font-size: 1.4em;"></span></p>
+            </div>
+            <div class="ui-g-6" style="grid-column: 2/4; grid-row: 1;"></div>
+            <div class="ui-g-3 doNotPrint" id="timer" style="color: green; grid-column: 4; grid-row: 1;">
+                <span id="curTime">02 : 00 left</span>
+            </div>
+            <div class="ui-g-12" style="font-style: italic; grid-column: 1/5; grid-row: 2;">
+                <p><span class="titleText">Finished question(s): </span><span style="font-size: 1.4em;"
+                        id="doneQList"></span>
+                    <span class="titleText">(<span id="doneQNum">0</span> of 10)</span></p>
+            </div>
+        </div>
+
+        <div id="quizContent" class="doNotPrint"></div>
+
+        <div id="summaryBox" style="display: none;">
+            <h1 style="font-style: italic; text-align: center;">Score <span id="score">0</span>/10</h1>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
