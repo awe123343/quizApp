@@ -202,41 +202,61 @@ function questionSwitch(forward) {
   document.getElementById("doneQNum").innerHTML = getQuestionTouched().length;
 
 
-  let prevbtns = document.getElementsByClassName("prevbtn");
-  let nextbtns = document.getElementsByClassName("nextbtn");
-  let skipbtns = document.getElementsByClassName("skipbtn");
-  let submbtns = document.getElementsByClassName("submbtn");
+  // let prevbtns = document.getElementsByClassName("prevbtn");
+  // let nextbtns = document.getElementsByClassName("nextbtn");
+  // let skipbtns = document.getElementsByClassName("skipbtn");
+  // let submbtns = document.getElementsByClassName("submbtn");
+
+  let prevbtn = document.querySelector(".prevbtn");
+  let nextbtn = document.querySelector(".nextbtn");
+  let skipbtn = document.querySelector(".skipbtn");
+  let submbtn = document.querySelector(".submbtn");
 
   if (currQuestionId != 0) {
-    for (let i = 0; i < prevbtns.length; i++) {
-      prevbtns[i].disabled = false;
-    }
+      prevbtn.disabled = false;
   } else {
-    for (let i = 0; i < prevbtns.length; i++) {
-      prevbtns[i].disabled = true;
-    }
+      prevbtn.disabled = true;
   }
   if (currQuestionId == 9) {
-    for (let i = 0; i < nextbtns.length; i++) {
-      nextbtns[i].disabled = true;
-    }
-    for (let i = 0; i < nextbtns.length; i++) {
-      skipbtns[i].disabled = true;
-    }
-    for (let i = 0; i < submbtns.length; i++) {
-      submbtns[i].style.display = "inline-block";
-    }
+      nextbtn.disabled = true;
+      skipbtn.disabled = true;
+      submbtn.style.display = "inline-block";
   } else {
-    for (let i = 0; i < nextbtns.length; i++) {
-      nextbtns[i].disabled = false;
-    }
-    for (let i = 0; i < nextbtns.length; i++) {
-      skipbtns[i].disabled = false;
-    }
-    for (let i = 0; i < submbtns.length; i++) {
-      submbtns[i].style.display = "none";
-    }
+      nextbtn.disabled = false;
+      skipbtn.disabled = false;
+      submbtn.style.display = "none";
   }
+
+  // if (currQuestionId != 0) {
+  //   for (let i = 0; i < prevbtns.length; i++) {
+  //     prevbtns[i].disabled = false;
+  //   }
+  // } else {
+  //   for (let i = 0; i < prevbtns.length; i++) {
+  //     prevbtns[i].disabled = true;
+  //   }
+  // }
+  // if (currQuestionId == 9) {
+  //   for (let i = 0; i < nextbtns.length; i++) {
+  //     nextbtns[i].disabled = true;
+  //   }
+  //   for (let i = 0; i < nextbtns.length; i++) {
+  //     skipbtns[i].disabled = true;
+  //   }
+  //   for (let i = 0; i < submbtns.length; i++) {
+  //     submbtns[i].style.display = "inline-block";
+  //   }
+  // } else {
+  //   for (let i = 0; i < nextbtns.length; i++) {
+  //     nextbtns[i].disabled = false;
+  //   }
+  //   for (let i = 0; i < nextbtns.length; i++) {
+  //     skipbtns[i].disabled = false;
+  //   }
+  //   for (let i = 0; i < submbtns.length; i++) {
+  //     submbtns[i].style.display = "none";
+  //   }
+  // }
 
   if (currQuestionId !== 9) {
     toggleBtnDisable(currQuestionId);
@@ -255,16 +275,8 @@ function startTimer() {
     let distance = deadline - currentTime;
 
     if (distance <= 60 * 1000) {
-      // this.messageService.add({ severity: 'error', summary: '1 MINUTE LEFT!', life: 10000, detail: 'You have only one minute left for this quiz!' });
       document.getElementById("timer").style.color = "red";
     }
-    // if (timeLeft > 0) {
-    //     timeLeft--;
-    // } else {
-    //     // this.timeLeft = 600;
-    //     // location.reload();
-    //     submitQuiz();
-    // }
 
     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
