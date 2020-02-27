@@ -61,10 +61,6 @@ window.onload = function() {
 
 function submitForm(e) {
   submitted = true;
-  // stop here if form is invalid
-  // if (this.loginForm.invalid) {
-  //   return;
-  // }
 
   let emailField = document.getElementById("email_input");
   let nameField = document.getElementById("name_input");
