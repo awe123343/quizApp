@@ -24,7 +24,6 @@ window.onload = function() {
   const form = document.getElementById("form");
   form.addEventListener("change", () => {
     console.log("Form valid? ", form.checkValidity());
-
     document.getElementById("infoSubmit").disabled = !form.checkValidity();
   });
 
@@ -716,6 +715,7 @@ function reDoTest() {
     document.getElementById("doneQList").innerHTML = "";
     document.getElementById("doneQNum").innerHTML = 0;
     document.getElementById("quizContent").style.display = "block";
-    document.getElementById("summaryBox").innerHTML = "<h1 style='font-style: italic; text-align: center;'>Score <span id='score'>0</span>/10</h1>";
+    document.querySelector("#score").innerHTML = "0";
+
     document.getElementById("summaryBox").style.display = "none";
 }
