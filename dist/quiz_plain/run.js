@@ -13,7 +13,7 @@ $(document).ready(function() {
     url: "./assets/quiz.json",
     dataType: "json",
     contentType: "application/json; charset=utf-8",
-    type: "POST",
+    type: "GET",
     success: function(result) {
       questionBase = result;
       console.log("All questions", questionBase);
