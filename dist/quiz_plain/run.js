@@ -471,47 +471,13 @@ function submitForm(e) {
         optionContentNode.appendChild(suboptionNode);
         optionNode.appendChild(optionContentNode);
       });
-    } else if (q.type == "sc") {
+    } else {
       options.forEach(function(option) {
         let optionContentNode = document.createElement("div");
         optionContentNode.style = "display :flex; align-items: center; margin-bottom: 1em;"
         let optionInputNode = document.createElement("input");
-        optionInputNode.type = "radio";
-        optionInputNode.name = q.question_id;
-        optionInputNode.value = option.option_id;
-        optionInputNode.setAttribute("onclick", "handleOptionClick(this, " + questionToDo.indexOf(q) + ")");
-        optionContentNode.appendChild(optionInputNode);
-        let suboptionNode = document.createElement("div");
-        suboptionNode.style = "display: flex; flex-direction: column; margin-left: 0.5em;";
-
-        let option_contents = option.option_content;
-        option_contents.forEach(function(opt_sub) {
-          if (opt_sub.type == "text") {
-            let textNode = document.createElement("p");
-            textNode.innerHTML = opt_sub.content;
-            suboptionNode.appendChild(textNode);
-          } else if (opt_sub.type == "image") {
-            let imgNode = document.createElement("img");
-            imgNode.className = "qImgBorder";
-            imgNode.height = 120;
-            imgNode.src = opt_sub.content;
-            suboptionNode.appendChild(imgNode);
-          } else if (opt_sub.type == "code") {
-            let codeNode = document.createElement("p");
-            codeNode.innerHTML = "<xmp>" + opt_sub.content + "</xmp>";
-            suboptionNode.appendChild(codeNode);
-          }
-        });
-
-        optionContentNode.appendChild(suboptionNode);
-        optionNode.appendChild(optionContentNode);
-      });
-    } else if (q.type == "mc") {
-      options.forEach(function(option) {
-        let optionContentNode = document.createElement("div");
-        optionContentNode.style = "display :flex; align-items: center; margin-bottom: 1em;"
-        let optionInputNode = document.createElement("input");
-        optionInputNode.type = "checkbox";
+        if (q.type == "sc") optionInputNode.type = "radio";
+        else if (q.type == "mc") optionInputNode.type = "checkbox";
         optionInputNode.name = q.question_id;
         optionInputNode.value = option.option_id;
         optionInputNode.setAttribute("onclick", "handleOptionClick(this, " + questionToDo.indexOf(q) + ")");
@@ -658,49 +624,13 @@ function submitQuiz() {
         optionContentNode.appendChild(suboptionNode);
         optionNode.appendChild(optionContentNode);
       });
-    } else if (q.type == "sc") {
+    } else {
       options.forEach(function(option) {
         let optionContentNode = document.createElement("div");
         optionContentNode.style = "display :flex; align-items: center; margin-bottom: 1em;"
         let optionInputNode = document.createElement("input");
-        optionInputNode.type = "radio";
-        optionInputNode.disabled = true;
-        optionInputNode.checked = q.selected == option.option_id;
-        optionInputNode.value = option.option_id;
-        optionContentNode.appendChild(optionInputNode);
-        let suboptionNode = document.createElement("div");
-        suboptionNode.style = "display: flex; flex-direction: column; margin-left: 0.5em;";
-        suboptionNode.style.color = getSumOptColor(questionToDo.indexOf(q), option.option_id);
-        suboptionNode.style.fontWeight = getSumOptWeight(questionToDo.indexOf(q), option.option_id);
-        let option_contents = option.option_content;
-        option_contents.forEach(function(opt_sub) {
-          if (opt_sub.type == "text") {
-            let textNode = document.createElement("p");
-            textNode.innerHTML = opt_sub.content;
-            suboptionNode.appendChild(textNode);
-          } else if (opt_sub.type == "image") {
-            let imgNode = document.createElement("img");
-            imgNode.className = "qImgBorder";
-            imgNode.height = 120;
-            imgNode.src = opt_sub.content;
-            imgNode.style.borderColor = getSumOptColor(questionToDo.indexOf(q), option.option_id) == "inherit" ? "grey" : getSumOptColor(questionToDo.indexOf(q), option.option_id);
-            suboptionNode.appendChild(imgNode);
-          } else if (opt_sub.type == "code") {
-            let codeNode = document.createElement("p");
-            codeNode.innerHTML = "<xmp>" + opt_sub.content + "</xmp>";
-            suboptionNode.appendChild(codeNode);
-          }
-        });
-
-        optionContentNode.appendChild(suboptionNode);
-        optionNode.appendChild(optionContentNode);
-      });
-    } else if (q.type == "mc") {
-      options.forEach(function(option) {
-        let optionContentNode = document.createElement("div");
-        optionContentNode.style = "display :flex; align-items: center; margin-bottom: 1em;"
-        let optionInputNode = document.createElement("input");
-        optionInputNode.type = "checkbox";
+        if (q.type == "sc") optionInputNode.type = "radio";
+        else if (q.type == "mc") optionInputNode.type = "checkbox";
         optionInputNode.disabled = true;
         optionInputNode.checked = q.selected == option.option_id;
         optionInputNode.value = option.option_id;
