@@ -120,7 +120,7 @@ function startTimer() {
     let distance = deadline - currentTime;
 
     if (distance <= 60 * 1000) {
-      document.getElementById("timer").style.color = "red";
+      $("#timer").css("color", "red");
     }
 
     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -370,8 +370,8 @@ function handleOptionClick(ele, q_index) {
     doneQ.forEach(function(doneQ_sub) {
       doneQList_html += doneQ_sub + " ";
     });
-    document.getElementById("doneQList").innerHTML = doneQList_html;
-    document.getElementById("doneQNum").innerHTML = getQuestionTouched().length;
+    $("#doneQList").html(doneQList_html);
+    $("#doneQNum").html(getQuestionTouched().length);
 }
 
 function toggleBtnDisable(q_id) {
