@@ -8,18 +8,23 @@ var timeLeft = 120;
 var currQuestionId = 0;
 
 
-$(document).ready(function(){
-
-  $.ajax({url: "./assets/quiz.json", success: function(result){
-    questionBase = result;
-    console.log("All questions", questionBase);
-    chooseQuestions();
-  }});
+$(document).ready(function() {
+  $.ajax({
+    url: "./assets/quiz.json",
+    dataType: "json",
+    contentType: "application/json; charset=utf-8",
+    type: "POST",
+    success: function(result) {
+      questionBase = result;
+      console.log("All questions", questionBase);
+      chooseQuestions();
+    }
+  });
 
   const form = $("#form")[0];
-  $("#form").change(function(){
+  $("#form").change(function() {
     console.log("Form valid? ", form.checkValidity());
-    $("#infoSubmit").prop('disabled', !form.checkValidity());
+    $("#infoSubmit").prop("disabled", !form.checkValidity());
   });
 
   const emailField = $("#email_input")[0];
@@ -27,7 +32,7 @@ $(document).ready(function(){
   const emailError = $("#email_error")[0];
   const nameError = $("#name_error")[0];
 
-  $("#email_input").blur(function(){
+  $("#email_input").blur(function() {
     isValidEmail = emailField.checkValidity();
     if (!isValidEmail) {
       emailField.style.borderColor = "red";
@@ -42,11 +47,11 @@ $(document).ready(function(){
     isValidName = nameField.checkValidity();
     console.log("Name valid? ", isValidName);
     if (!isValidName) {
-        nameField.style.borderColor = "red";
-        nameError.style.display = "block";
+      nameField.style.borderColor = "red";
+      nameError.style.display = "block";
     } else {
-        nameField.style.borderColor = "#ccc";
-        nameError.style.display = "none";
+      nameField.style.borderColor = "#ccc";
+      nameError.style.display = "none";
     }
   });
 });
