@@ -1,6 +1,5 @@
 const questionAmount = 10;
 
-var submitted = false;
 var email = "";
 var name = "";
 var questionBase;
@@ -8,32 +7,27 @@ var questionToDo;
 var timeLeft = 120;
 var currQuestionId = 0;
 
-window.onload = function() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "./assets/quiz.json", true);
-  xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == XMLHttpRequest.DONE && xhttp.status == 200) {
-      questionBase = JSON.parse(xhttp.responseText);
 
-      console.log("All questions", questionBase);
-      chooseQuestions();
-    }
-  };
-  xhttp.send();
+$(document).ready(function(){
 
-  const form = document.getElementById("form");
-  form.addEventListener("change", () => {
+  $.ajax({url: "./assets/quiz.json", success: function(result){
+    questionBase = result;
+    console.log("All questions", questionBase);
+    chooseQuestions();
+  }});
+
+  const form = $("#form")[0];
+  $("#form").change(function(){
     console.log("Form valid? ", form.checkValidity());
-    document.getElementById("infoSubmit").disabled = !form.checkValidity();
+    $("#infoSubmit").prop('disabled', !form.checkValidity());
   });
 
-  const emailField = document.getElementById("email_input");
-  const nameField = document.getElementById("name_input");
-  const emailError = document.getElementById("email_error");
-  const nameError = document.getElementById("name_error");
+  const emailField = $("#email_input")[0];
+  const nameField = $("#name_input")[0];
+  const emailError = $("#email_error")[0];
+  const nameError = $("#name_error")[0];
 
-  // console.log(emailField);
-  emailField.addEventListener("blur", function(event) {
+  $("#email_input").blur(function(){
     isValidEmail = emailField.checkValidity();
     if (!isValidEmail) {
       emailField.style.borderColor = "red";
@@ -44,8 +38,7 @@ window.onload = function() {
     }
   });
 
-
-  nameField.addEventListener("blur", function(event) {
+  $("#name_input").blur(function() {
     isValidName = nameField.checkValidity();
     console.log("Name valid? ", isValidName);
     if (!isValidName) {
@@ -56,157 +49,40 @@ window.onload = function() {
         nameError.style.display = "none";
     }
   });
-};
+});
 
-
-function submitForm(e) {
-  submitted = true;
-
-  let emailField = document.getElementById("email_input");
-  let nameField = document.getElementById("name_input");
-  let submitBtn = document.getElementById("infoSubmit");
-
-  email = emailField.value;
-  name = nameField.value;
-
-  console.log(email);
-  console.log(name);
-  document.getElementById("loginbox").style.display = "none";
-  startTimer();
-
-  let quizContent = document.getElementById("quizContent");
-
-  let quiz_content_html = "";
-  questionToDo.forEach(function(q) {
-    if (questionToDo.indexOf(q) != 0) {
-      quiz_content_html +=
-        "<div class='qBoxB' id='qbox" + questionToDo.indexOf(q) + "' style='display : none;'>";
-    } else {
-      quiz_content_html += "<div class='qBoxB' id='qbox" + questionToDo.indexOf(q) + "' style='display : inherit;'>";
-    }
-
-    quiz_content_html += "<div class='qrow' style='background-color : #f4f4f4;'><p>Question " + (questionToDo.indexOf(q) + 1) + " (" + getQuestionType(q.type) + ")</p></div>";
-    let q_content_html = "<div class='qrow'>";
-    let q_content = q.question_content;
-    q_content.forEach(function(q_sub) {
-      if (q_sub.type == "text") {
-        q_content_html += "<p>" + q_sub.content + "</p>";
-      } else if (q_sub.type == "image") {
-        q_content_html += "<img class='qImgBorder' height='120px' style='margin-left: 2em' src='" + q_sub.content + "' />";
-      } else if (q_sub.type == "code") {
-        q_content_html +=
-          "<span><pre><xmp>" + q_sub.content + "</xmp></pre></span>";
-      }
-    });
-    q_content_html += "</div>";
-    quiz_content_html += q_content_html;
-
-    let option_html = "<div class='qrowOpt'>";
-    let options = q.options;
-    if (q.type == "tf") {
-      options.forEach(function(option) {
-        option_html += "<div style='display: flex; align-items: flex-start; margin-bottom: 1em;'>";
-        option_html += "<input type='radio' name='" + q.question_id +"' value='" + option.option_id + "' onclick='handleOptionClick(this," + questionToDo.indexOf(q) + ")'/>";
-        option_html += "<div style='display: flex; flex-direction: column; margin-left: 0.5em;'>";
-        option_html += option.option_content == true ? "True" : "False";
-        option_html += "</div></div>";
-      });
-    } else if (q.type == "sc") {
-      options.forEach(function(option) {
-        option_html += "<div style='display: flex; align-items: center; margin-bottom: 1em;'>";
-        option_html += "<input type='radio' name='" + q.question_id +"' value='" + option.option_id + "' onclick='handleOptionClick(this," + questionToDo.indexOf(q) + ")' />";
-        option_html += "<div style='display: flex; flex-direction: column; margin-left: 0.5em;'>";
-        let option_sub_html = "";
-        let option_contents = option.option_content;
-        option_contents.forEach(function(opt_sub) {
-          if (opt_sub.type == "text") {
-            option_sub_html += "<p>" + opt_sub.content + "</p>";
-          } else if (opt_sub.type == "image") {
-            option_sub_html += "<img class='qImgBorder' height='120px' src='" + opt_sub.content + "' />";
-          } else if (opt_sub.type == "code") {
-            option_sub_html += "<p><xmp>" + opt_sub.content + "</xmp></p>";
-          }
-        });
-        option_html += option_sub_html;
-        option_html += "</div></div>";
-      });
-    } else if (q.type == "mc") {
-      options.forEach(function(option) {
-        option_html += "<div style='display: flex; align-items: center; margin-bottom: 1em;'>";
-        option_html += "<input type='checkbox' value='" + option.option_id + "' onclick='handleOptionClick(this," + questionToDo.indexOf(q) + ")' />";
-        option_html += "<div style='display: flex; flex-direction: column; margin-left: 0.5em;'>";
-        let option_sub_html = "";
-        let option_contents = option.option_content;
-        option_contents.forEach(function(opt_sub) {
-          if (opt_sub.type == "text") {
-            option_sub_html += "<p>" + opt_sub.content + "</p>";
-          } else if (opt_sub.type == "image") {
-            option_sub_html += "<img class='qImgBorder' height='120px' src='" + opt_sub.content + "' />";
-          } else if (opt_sub.type == "code") {
-            option_sub_html += "<p><xmp>" + opt_sub.content + "</xmp></p>";
-          }
-        });
-        option_html += option_sub_html;
-        option_html += "</div></div>";
-      });
-    }
-    option_html += "</div>";
-    quiz_content_html += option_html;
-    quiz_content_html += "</div>";
-  });
-
-  quiz_content_html += "<div style='margin-top: 2em; display: flex; justify-content: center;'>";
-  quiz_content_html += "<button class='ui-button prevbtn' style='margin-right: .5em; width:6.5em' onclick='questionSwitch(false)' disabled><i class='fas fa-arrow-left'></i> Previous</button>";
-  quiz_content_html += "<button class='ui-button nextbtn' style='margin-right: .5em; width:6.5em' onclick='questionSwitch(true)' disabled><i class='fas fa-arrow-right'></i> Next</button>";
-  quiz_content_html += "<button class='ui-button skipbtn' style='margin-right: .5em; width:6.5em' onclick='questionSwitch(true)'><i class='fas fa-fast-forward'></i> Skip</button>";
-  quiz_content_html += "<button class='ui-button submbtn' style='margin-right: .5em; width:6.5em; display : none' onclick='submitQuiz()'><i class='fas fa-upload'></i> Submit</button></div>";
-
-  quizContent.innerHTML += quiz_content_html;
-
-  document.getElementById("quizbox").style.display = "inherit";
-
-  showFetchedInput();
-
-  return false;
-}
 
 function showFetchedInput() {
-  document.getElementById("emailFetched").innerHTML = email;
-  document.getElementById("nameFetched").innerHTML = name;
+  $("#emailFetched").html(email);
+  $("#nameFetched").html(name);
 }
 
 function questionSwitch(forward) {
   let prev_id = "qbox" + currQuestionId;
-  document.getElementById(prev_id).style.display = "none";
+  $("#" + prev_id).css("display", "none");
   if (forward) {
     currQuestionId++;
   } else {
     currQuestionId--;
   }
   if (currQuestionId == 9) {
-    document.getElementById(prev_id).style.display = "none";
+    $("#" + prev_id).css("display", "none");
   }
   let ele_id = "qbox" + currQuestionId;
-  document.getElementById(ele_id).style.display = "inherit";
+  $("#" + ele_id).css("display", "inherit");
 
   let doneQ = getQuestionTouched();
   let doneQList_html = "";
   doneQ.forEach(function(doneQ_sub) {
     doneQList_html += doneQ_sub + " ";
   });
-  document.getElementById("doneQList").innerHTML = doneQList_html;
-  document.getElementById("doneQNum").innerHTML = getQuestionTouched().length;
+  $("#doneQList").html(doneQList_html);
+  $("#doneQNum").html(getQuestionTouched().length);
 
-
-  // let prevbtns = document.getElementsByClassName("prevbtn");
-  // let nextbtns = document.getElementsByClassName("nextbtn");
-  // let skipbtns = document.getElementsByClassName("skipbtn");
-  // let submbtns = document.getElementsByClassName("submbtn");
-
-  let prevbtn = document.querySelector(".prevbtn");
-  let nextbtn = document.querySelector(".nextbtn");
-  let skipbtn = document.querySelector(".skipbtn");
-  let submbtn = document.querySelector(".submbtn");
+  let prevbtn = $(".prevbtn")[0];
+  let nextbtn = $(".nextbtn")[0];
+  let skipbtn = $(".skipbtn")[0];
+  let submbtn = $(".submbtn")[0];
 
   if (currQuestionId != 0) {
       prevbtn.disabled = false;
@@ -223,37 +99,6 @@ function questionSwitch(forward) {
       submbtn.style.display = "none";
   }
 
-  // if (currQuestionId != 0) {
-  //   for (let i = 0; i < prevbtns.length; i++) {
-  //     prevbtns[i].disabled = false;
-  //   }
-  // } else {
-  //   for (let i = 0; i < prevbtns.length; i++) {
-  //     prevbtns[i].disabled = true;
-  //   }
-  // }
-  // if (currQuestionId == 9) {
-  //   for (let i = 0; i < nextbtns.length; i++) {
-  //     nextbtns[i].disabled = true;
-  //   }
-  //   for (let i = 0; i < nextbtns.length; i++) {
-  //     skipbtns[i].disabled = true;
-  //   }
-  //   for (let i = 0; i < submbtns.length; i++) {
-  //     submbtns[i].style.display = "inline-block";
-  //   }
-  // } else {
-  //   for (let i = 0; i < nextbtns.length; i++) {
-  //     nextbtns[i].disabled = false;
-  //   }
-  //   for (let i = 0; i < nextbtns.length; i++) {
-  //     skipbtns[i].disabled = false;
-  //   }
-  //   for (let i = 0; i < submbtns.length; i++) {
-  //     submbtns[i].style.display = "none";
-  //   }
-  // }
-
   if (currQuestionId !== 9) {
     toggleBtnDisable(currQuestionId);
   }
@@ -262,7 +107,6 @@ function questionSwitch(forward) {
 var interval;
 
 function startTimer() {
-  let timeSpan = document.getElementById("curTime");
   let now = new Date().getTime();
   let deadline = timeLeft * 1000 + now;
 
@@ -277,144 +121,12 @@ function startTimer() {
     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    timeSpan.innerHTML = minutes.toString().padStart(2, '0') + " : " + seconds.toString().padStart(2, '0') + " left";
+    $("#curTime").html(minutes.toString().padStart(2, '0') + " : " + seconds.toString().padStart(2, '0') + " left");
 
     if (distance <= 0) {
       submitQuiz();
     }
   }, 200);
-}
-
-function submitQuiz() {
-  quizSubmitted = true;
-  // timeLeft = 0;
-  clearInterval(interval);
-  document.getElementById("curTime").innerHTML = "00 : 00 left";
-  document.getElementById("timer").style.color = "red";
-  document.getElementById("quizContent").style.display = "none";
-  document.getElementById("summaryBox").style.display = "block";
-  document.getElementById("doneQNum").innerHTML = getQuestionTouched().length;
-
-  document.getElementById("score").innerHTML = getScore();
-
-  let sumBox = document.getElementById("summaryBox");
-  let sumBox_html = "";
-
-  questionToDo.forEach(function(q) {
-    sumBox_html += "<div style='margin-bottom:1em;' class='qBoxB'>";
-
-    sumBox_html += "<div class='qrow' style='font-weight: bold; background-color : #f4f4f4'><p>Question " + (questionToDo.indexOf(q) + 1) + " (" + getQuestionType(q.type) + ")";
-    sumBox_html += "<span style='color : " + (validateAns(questionToDo.indexOf(q)) ? "green" : "red") + "'>" + (validateAns(questionToDo.indexOf(q)) ? " Correct" : " Wrong") + "</span></p></div>";
-
-    let q_content_html = "<div style='font-weight : bold' class='qrow'>";
-    let q_content = q.question_content;
-    q_content.forEach(function(q_sub) {
-      if (q_sub.type == "text") {
-        q_content_html += "<p>" + q_sub.content + "</p>";
-      } else if (q_sub.type == "image") {
-        q_content_html +=
-          "<img class='qImgBorder' height='120px' style='margin-left: 2em' src='" +
-          q_sub.content +
-          "' />";
-      } else if (q_sub.type == "code") {
-        q_content_html +=
-          "<span><pre><xmp>" + q_sub.content + "</xmp></pre></span>";
-      }
-    });
-    q_content_html += "</div>";
-    sumBox_html += q_content_html;
-
-    let option_html = "<div class='qrowOpt'>";
-    let options = q.options;
-    if (q.type == "tf") {
-      options.forEach(function(option) {
-        option_html += "<div style='display: flex; align-items: flex-start; margin-bottom: 1em;'>";
-        option_html += "<input type='radio' value='" + option.option_id + "' disabled " + (q.selected == option.option_id ? "checked" : "") + "/>";
-        option_html += "<div style='display: flex; flex-direction: column; margin-left: 0.5em;'>";
-        option_html +=
-          "<span style='color : " +
-          getSumOptColor(questionToDo.indexOf(q), option.option_id) +
-          "; font-weight : " +
-          getSumOptWeight(questionToDo.indexOf(q), option.option_id) +
-          ";'>";
-        option_html += option.option_content == true ? "True" : "False";
-        option_html += "</span></div></div>";
-      });
-    } else if (q.type == "sc") {
-      options.forEach(function(option) {
-        option_html +=
-          "<div style='display: flex; align-items: center; margin-bottom: 1em;'>";
-        option_html +=
-          "<input type='radio' value='" + option.option_id + "' disabled " + (q.selected == option.option_id ? "checked" : "") + " />";
-        option_html +=
-          "<div style='display: flex; flex-direction: column; margin-left: 0.5em; color : " +
-          getSumOptColor(questionToDo.indexOf(q), option.option_id) +
-          "; font-weight : " +
-          getSumOptWeight(questionToDo.indexOf(q), option.option_id) +
-          ";'>";
-        let option_sub_html = "";
-        let option_contents = option.option_content;
-        option_contents.forEach(function(opt_sub) {
-          if (opt_sub.type == "text") {
-            option_sub_html += "<p>" + opt_sub.content + "</p>";
-          } else if (opt_sub.type == "image") {
-            option_sub_html += "<img class='qImgBorder' height='120px' src='" + opt_sub.content + "' style='border-color :" + (getSumOptColor(questionToDo.indexOf(q), option.option_id) == "inherit" ? "grey" : getSumOptColor(questionToDo.indexOf(q), option.option_id)) + ";' />";
-          } else if (opt_sub.type == "code") {
-            option_sub_html += "<p><xmp>" + opt_sub.content + "</xmp></p>";
-          }
-        });
-        option_html += option_sub_html;
-        option_html += "</div></div>";
-      });
-    } else if (q.type == "mc") {
-      options.forEach(function(option) {
-        option_html +=
-          "<div style='display: flex; align-items: center; margin-bottom: 1em;'>";
-        option_html +=
-          "<input type='checkbox' value='" + option.option_id + "' disabled " + (q.selected.includes((option.option_id).toString()) ? "checked" : "") + " />";
-        option_html +=
-          "<div style='display: flex; flex-direction: column; margin-left: 0.5em; color : " +
-          getSumOptColor(questionToDo.indexOf(q), option.option_id) +
-          "; font-weight : " +
-          getSumOptWeight(questionToDo.indexOf(q), option.option_id) +
-          ";'>";
-        let option_sub_html = "";
-        let option_contents = option.option_content;
-        option_contents.forEach(function(opt_sub) {
-          if (opt_sub.type == "text") {
-            option_sub_html += "<p>" + opt_sub.content + "</p>";
-          } else if (opt_sub.type == "image") {
-            option_sub_html += "<img class='qImgBorder' height='120px' src='" + opt_sub.content + "' style='border-color :" + (getSumOptColor(questionToDo.indexOf(q), option.option_id) == "inherit" ? "grey" : getSumOptColor(questionToDo.indexOf(q), option.option_id)) + ";' />";
-          } else if (opt_sub.type == "code") {
-            option_sub_html += "<p><xmp>" + opt_sub.content + "</xmp></p>";
-          }
-        });
-        option_html += option_sub_html;
-        option_html += "</div></div>";
-      });
-    }
-    option_html += "</div>";
-    sumBox_html += option_html;
-
-    sumBox_html += "</div>";
-  });
-
-  sumBox_html +=
-    "<div style='text-align: center; margin-bottom: 120px;' class='doNotPrint'>";
-  sumBox_html +=
-    "<button type='button' class='ui-button' onclick='printComponent()' style='width:6em;'><i class='fas fa-print'></i> Print</button>";
-  sumBox_html +=
-    "<button type='button' class='ui-button' onclick='reDoTest()' style='margin-left: 0.5em; width:6em;'><i class='fas fa-redo'></i> Retry</button></div>";
-
-  sumBox.innerHTML += sumBox_html;
-
-  let doneQ = getQuestionTouched();
-  let doneQList_html = "";
-  doneQ.forEach(function(doneQ_sub) {
-    doneQList_html += doneQ_sub + " ";
-  });
-  document.getElementById("doneQList").innerHTML = doneQList_html;
-  document.getElementById("doneQNum").innerHTML = getQuestionTouched().length;
 }
 
 function reloadTest() {
@@ -450,7 +162,6 @@ function chooseQuestions() {
   let res2 = [];
 
   for (let i = 0; i < len - 3; i++) {
-    // let cur_num = questionBase[i];
     let cur_num = leftQuestions[i];
     if (cur_num.type != "mc") {
       cur_num.selected = null;
@@ -459,7 +170,7 @@ function chooseQuestions() {
     }
 
     cur_num.options = shuffle(cur_num.options);
-    // let cur_num = i;
+
     if (i < questionAmount - 3) {
       res2.push(cur_num);
     } else {
@@ -515,40 +226,19 @@ function getQuestionType(type) {
   return res;
 }
 
-function getFuncForSubmit() {
-  let qNotDone = [];
-  for (let i = 0; i < questionAmount; i++) {
-    if (questionToDo[i].type == "mc") {
-      if (questionToDo[i].selected.length === 0) {
-        qNotDone.push(i);
-      }
-    } else {
-      if (!questionToDo[i].selected) {
-        qNotDone.push(i);
-      }
-    }
-  }
-  qNotDone.length === 0 ? submitQuiz() : confirmToSubmitQuiz(qNotDone);
-}
-
 function getQuestionTouched() {
   let res = [];
   for (let i = 0; i < questionAmount; i++) {
     if (questionToDo[i].type == "mc") {
       if (questionToDo[i].selected.length !== 0) {
-        // if (i !== questionAmount - 1) {
-          res.push(i + 1);
-        // }
+        res.push(i + 1);
       }
     } else {
       if (questionToDo[i].selected) {
-        // if (i !== questionAmount - 1) {
-          res.push(i + 1);
-        // }
+        res.push(i + 1);
       }
     }
   }
-//   console.log("Questions have been done", res);
   return res;
 }
 
@@ -591,13 +281,7 @@ function getScore() {
 }
 
 function printComponent() {
-  // let printContents = document.getElementById(cmpName).innerHTML;
-  // let originalContents = document.body.innerHTML;
-  // document.body.innerHTML = printContents;
-
   window.print();
-
-  // document.body.innerHTML = originalContents;
 }
 
 function getSumOptColor(q_id, opt_id) {
@@ -648,8 +332,8 @@ function getSumOptWeight(q_id, opt_id) {
 
 function handleOptionClick(ele, q_index) {
     console.log("See param", ele.value, ele.checked, ele.type, "Question ID: ", q_index);
-    let nextbtns = document.getElementsByClassName("nextbtn");
-    let skipbtns = document.getElementsByClassName("skipbtn");
+    let nextbtns = $(".nextbtn");
+    let skipbtns = $(".skipbtn");
 
     if (ele.type == "checkbox") {
         ele.checked ? questionToDo[q_index].selected.push(ele.value) : questionToDo[q_index].selected = questionToDo[q_index].selected.filter(opt => opt != ele.value);
@@ -686,8 +370,8 @@ function handleOptionClick(ele, q_index) {
 }
 
 function toggleBtnDisable(q_id) {
-    let nextbtns = document.getElementsByClassName("nextbtn");
-    let skipbtns = document.getElementsByClassName("skipbtn");
+    let nextbtns = $(".nextbtn");
+    let skipbtns = $(".skipbtn");
 
     if (questionToDo[q_id].type == "mc") {
         if (questionToDo[q_id].selected.length === 0) {
@@ -709,21 +393,383 @@ function toggleBtnDisable(q_id) {
     }
 }
 
+function submitForm(e) {
+
+  let emailField = $("#email_input");
+  let nameField = $("#name_input");
+
+  email = emailField.val();
+  name = nameField.val();
+
+  console.log(email);
+  console.log(name);
+  $("#loginbox").css("display", "none");
+  startTimer();
+
+  let quizContent = $("#quizContent")[0];
+
+  questionToDo.forEach(function(q) {
+    let qbox = document.createElement("div");
+    qbox.className = "qBoxB";
+    qbox.id = "qbox" + questionToDo.indexOf(q);
+    if (questionToDo.indexOf(q) != 0) {
+      qbox.style = "display : none";
+    } else {
+      qbox.style = "display : inherit";
+    }
+    
+    let qTitle = document.createElement("div");
+    qTitle.className = "qrow";
+    qTitle.style = "background-color : #f4f4f4";
+    qTitle.innerHTML = "<p>Question " + (questionToDo.indexOf(q) + 1) + " (" + getQuestionType(q.type) + ")</p>";
+    qbox.appendChild(qTitle);
+
+    let q_content_node = document.createElement("div");
+    q_content_node.className = "qrow";
+    let q_content = q.question_content;
+    q_content.forEach(function(q_sub) {
+      if (q_sub.type == "text") {
+        let textNode = document.createElement("p");
+        textNode.innerHTML = q_sub.content;
+        q_content_node.appendChild(textNode);
+      } else if (q_sub.type == "image") {
+        let imgNode = document.createElement("img");
+        imgNode.className = "qImgBorder";
+        imgNode.height = 120;
+        imgNode.style = "margin-left : 2em";
+        imgNode.src = q_sub.content;
+        q_content_node.appendChild(imgNode);
+      } else if (q_sub.type == "code") {
+        let codeNode = document.createElement("span");
+        codeNode.innerHTML = "<pre><xmp>" + q_sub.content + "</xmp></pre>";
+        q_content_node.appendChild(codeNode);
+      }
+    });
+    qbox.appendChild(q_content_node);
+
+    let optionNode = document.createElement("div");
+    optionNode.className = "qrowOpt";
+    let options = q.options;
+    if (q.type == "tf") {
+      options.forEach(function(option) {
+        let optionContentNode = document.createElement("div");
+        optionContentNode.style = "display :flex; align-items: center; margin-bottom: 1em;"
+        let optionInputNode = document.createElement("input");
+        optionInputNode.type = "radio";
+        optionInputNode.name = q.question_id;
+        optionInputNode.value = option.option_id;
+        optionInputNode.setAttribute("onclick", "handleOptionClick(this, " + questionToDo.indexOf(q) + ")");
+        optionContentNode.appendChild(optionInputNode);
+        let suboptionNode = document.createElement("div");
+        suboptionNode.style = "display: flex; flex-direction: column; margin-left: 0.5em;";
+        suboptionNode.innerHTML = option.option_content == true ? "True" : "False";
+        optionContentNode.appendChild(suboptionNode);
+        optionNode.appendChild(optionContentNode);
+      });
+    } else if (q.type == "sc") {
+      options.forEach(function(option) {
+        let optionContentNode = document.createElement("div");
+        optionContentNode.style = "display :flex; align-items: center; margin-bottom: 1em;"
+        let optionInputNode = document.createElement("input");
+        optionInputNode.type = "radio";
+        optionInputNode.name = q.question_id;
+        optionInputNode.value = option.option_id;
+        optionInputNode.setAttribute("onclick", "handleOptionClick(this, " + questionToDo.indexOf(q) + ")");
+        optionContentNode.appendChild(optionInputNode);
+        let suboptionNode = document.createElement("div");
+        suboptionNode.style = "display: flex; flex-direction: column; margin-left: 0.5em;";
+
+        let option_contents = option.option_content;
+        option_contents.forEach(function(opt_sub) {
+          if (opt_sub.type == "text") {
+            let textNode = document.createElement("p");
+            textNode.innerHTML = opt_sub.content;
+            suboptionNode.appendChild(textNode);
+          } else if (opt_sub.type == "image") {
+            let imgNode = document.createElement("img");
+            imgNode.className = "qImgBorder";
+            imgNode.height = 120;
+            imgNode.src = opt_sub.content;
+            suboptionNode.appendChild(imgNode);
+          } else if (opt_sub.type == "code") {
+            let codeNode = document.createElement("p");
+            codeNode.innerHTML = "<xmp>" + opt_sub.content + "</xmp>";
+            suboptionNode.appendChild(codeNode);
+          }
+        });
+
+        optionContentNode.appendChild(suboptionNode);
+        optionNode.appendChild(optionContentNode);
+      });
+    } else if (q.type == "mc") {
+      options.forEach(function(option) {
+        let optionContentNode = document.createElement("div");
+        optionContentNode.style = "display :flex; align-items: center; margin-bottom: 1em;"
+        let optionInputNode = document.createElement("input");
+        optionInputNode.type = "checkbox";
+        optionInputNode.name = q.question_id;
+        optionInputNode.value = option.option_id;
+        optionInputNode.setAttribute("onclick", "handleOptionClick(this, " + questionToDo.indexOf(q) + ")");
+        optionContentNode.appendChild(optionInputNode);
+        let suboptionNode = document.createElement("div");
+        suboptionNode.style = "display: flex; flex-direction: column; margin-left: 0.5em;";
+
+        let option_contents = option.option_content;
+        option_contents.forEach(function(opt_sub) {
+          if (opt_sub.type == "text") {
+            let textNode = document.createElement("p");
+            textNode.innerHTML = opt_sub.content;
+            suboptionNode.appendChild(textNode);
+          } else if (opt_sub.type == "image") {
+            let imgNode = document.createElement("img");
+            imgNode.className = "qImgBorder";
+            imgNode.height = 120;
+            imgNode.src = opt_sub.content;
+            suboptionNode.appendChild(imgNode);
+          } else if (opt_sub.type == "code") {
+            let codeNode = document.createElement("p");
+            codeNode.innerHTML = "<xmp>" + opt_sub.content + "</xmp>";
+            suboptionNode.appendChild(codeNode);
+          }
+        });
+
+        optionContentNode.appendChild(suboptionNode);
+        optionNode.appendChild(optionContentNode);
+      });
+    }
+    qbox.appendChild(optionNode);
+    quizContent.append(qbox);
+  });
+
+  let btns = document.createElement("div");
+  btns.style = "margin-top: 2em; display: flex; justify-content: center;";
+  let prevbtnNode = document.createElement("button");
+  prevbtnNode.className = "ui-button prevbtn";
+  prevbtnNode.style = "margin-right: .5em; width:6.5em";
+  prevbtnNode.setAttribute("onclick", "questionSwitch(false)");
+  prevbtnNode.disabled = true;
+  prevbtnNode.innerHTML = "<i class='fas fa-arrow-left'></i> Previous";
+  btns.appendChild(prevbtnNode);
+  let nextbtnNode = document.createElement("button");
+  nextbtnNode.className = "ui-button nextbtn";
+  nextbtnNode.style = "margin-right: .5em; width:6.5em";
+  nextbtnNode.setAttribute("onclick", "questionSwitch(true)");
+  nextbtnNode.disabled = true;
+  nextbtnNode.innerHTML = "<i class='fas fa-arrow-right'></i> Next";
+  btns.appendChild(nextbtnNode);
+  let skipbtnNode = document.createElement("button");
+  skipbtnNode.className = "ui-button skipbtn";
+  skipbtnNode.style = "margin-right: .5em; width:6.5em";
+  skipbtnNode.setAttribute("onclick", "questionSwitch(true)");
+  skipbtnNode.innerHTML = "<i class='fas fa-fast-forward'></i> Skip";
+  btns.appendChild(skipbtnNode);
+  let submbtnNode = document.createElement("button");
+  submbtnNode.className = "ui-button submbtn";
+  submbtnNode.style = "margin-right: .5em; width:6.5em; display : none";
+
+  submbtnNode.setAttribute("onclick", "submitQuiz()");
+  submbtnNode.innerHTML = "<i class='fas fa-upload'></i> Submit";
+  btns.appendChild(submbtnNode);
+
+  quizContent.append(btns);
+  $("#quizbox").css("display", "inherit");
+  showFetchedInput();
+
+  return false;
+}
+
+function submitQuiz() {
+  clearInterval(interval);
+  $("#curTime").html("00 : 00 left");
+  $("#timer").css("color", "red");
+  $("#quizContent").css("display", "none");
+  $("#summaryBox").css("display", "block");
+  $("#doneQNum").html(getQuestionTouched().length);
+
+  $("#score").html(getScore());
+
+  let sumBox = $("#summaryBox")[0];
+
+  questionToDo.forEach(function(q) {
+    let qbox = document.createElement("div");
+    qbox.className = "qBoxB";
+    qbox.style = "margin-bottom:1em;";
+
+    let qTitle = document.createElement("div");
+    qTitle.className = "qrow";
+    qTitle.style = "background-color : #f4f4f4";
+    let qTitleIdx = document.createElement("p");
+    qTitleIdx.innerHTML = "Question " + (questionToDo.indexOf(q) + 1) + " (" + getQuestionType(q.type) + ")";
+    let qTitleRes = document.createElement("span");
+    qTitleRes.style.color = validateAns(questionToDo.indexOf(q)) ? "green" : "red";
+    qTitleRes.innerHTML = validateAns(questionToDo.indexOf(q)) ? " Correct" : " Wrong";
+    qTitleIdx.appendChild(qTitleRes);
+    qTitle.append(qTitleIdx);
+    qbox.appendChild(qTitle);
+
+    let q_content_node = document.createElement("div");
+    q_content_node.className = "qrow";
+    let q_content = q.question_content;
+    q_content.forEach(function(q_sub) {
+      if (q_sub.type == "text") {
+        let textNode = document.createElement("p");
+        textNode.innerHTML = q_sub.content;
+        q_content_node.appendChild(textNode);
+      } else if (q_sub.type == "image") {
+        let imgNode = document.createElement("img");
+        imgNode.className = "qImgBorder";
+        imgNode.height = 120;
+        imgNode.style = "margin-left : 2em";
+        imgNode.src = q_sub.content;
+        q_content_node.appendChild(imgNode);
+      } else if (q_sub.type == "code") {
+        let codeNode = document.createElement("span");
+        codeNode.innerHTML = "<pre><xmp>" + q_sub.content + "</xmp></pre>";
+        q_content_node.appendChild(codeNode);
+      }
+    });
+    qbox.appendChild(q_content_node);
+
+    let optionNode = document.createElement("div");
+    optionNode.className = "qrowOpt";
+    let options = q.options;
+    if (q.type == "tf") {
+      options.forEach(function(option) {
+        let optionContentNode = document.createElement("div");
+        optionContentNode.style = "display :flex; align-items: center; margin-bottom: 1em;"
+        let optionInputNode = document.createElement("input");
+        optionInputNode.type = "radio";
+        optionInputNode.disabled = true;
+        optionInputNode.checked = q.selected == option.option_id;
+        optionInputNode.value = option.option_id;
+        optionContentNode.appendChild(optionInputNode);
+        let suboptionNode = document.createElement("div");
+        suboptionNode.style = "display: flex; flex-direction: column; margin-left: 0.5em;";
+        let optionTextNode = document.createElement("span");
+        optionTextNode.style.color = getSumOptColor(questionToDo.indexOf(q), option.option_id);
+        optionTextNode.style.fontWeight = getSumOptWeight(questionToDo.indexOf(q), option.option_id);
+        optionTextNode.innerHTML = option.option_content == true ? "True" : "False";
+        suboptionNode.appendChild(optionTextNode);
+        optionContentNode.appendChild(suboptionNode);
+        optionNode.appendChild(optionContentNode);
+      });
+    } else if (q.type == "sc") {
+      options.forEach(function(option) {
+        let optionContentNode = document.createElement("div");
+        optionContentNode.style = "display :flex; align-items: center; margin-bottom: 1em;"
+        let optionInputNode = document.createElement("input");
+        optionInputNode.type = "radio";
+        optionInputNode.disabled = true;
+        optionInputNode.checked = q.selected == option.option_id;
+        optionInputNode.value = option.option_id;
+        optionContentNode.appendChild(optionInputNode);
+        let suboptionNode = document.createElement("div");
+        suboptionNode.style = "display: flex; flex-direction: column; margin-left: 0.5em;";
+        suboptionNode.style.color = getSumOptColor(questionToDo.indexOf(q), option.option_id);
+        suboptionNode.style.fontWeight = getSumOptWeight(questionToDo.indexOf(q), option.option_id);
+        let option_contents = option.option_content;
+        option_contents.forEach(function(opt_sub) {
+          if (opt_sub.type == "text") {
+            let textNode = document.createElement("p");
+            textNode.innerHTML = opt_sub.content;
+            suboptionNode.appendChild(textNode);
+          } else if (opt_sub.type == "image") {
+            let imgNode = document.createElement("img");
+            imgNode.className = "qImgBorder";
+            imgNode.height = 120;
+            imgNode.src = opt_sub.content;
+            imgNode.style.borderColor = getSumOptColor(questionToDo.indexOf(q), option.option_id) == "inherit" ? "grey" : getSumOptColor(questionToDo.indexOf(q), option.option_id);
+            suboptionNode.appendChild(imgNode);
+          } else if (opt_sub.type == "code") {
+            let codeNode = document.createElement("p");
+            codeNode.innerHTML = "<xmp>" + opt_sub.content + "</xmp>";
+            suboptionNode.appendChild(codeNode);
+          }
+        });
+
+        optionContentNode.appendChild(suboptionNode);
+        optionNode.appendChild(optionContentNode);
+      });
+    } else if (q.type == "mc") {
+      options.forEach(function(option) {
+        let optionContentNode = document.createElement("div");
+        optionContentNode.style = "display :flex; align-items: center; margin-bottom: 1em;"
+        let optionInputNode = document.createElement("input");
+        optionInputNode.type = "checkbox";
+        optionInputNode.disabled = true;
+        optionInputNode.checked = q.selected == option.option_id;
+        optionInputNode.value = option.option_id;
+        optionContentNode.appendChild(optionInputNode);
+        let suboptionNode = document.createElement("div");
+        suboptionNode.style = "display: flex; flex-direction: column; margin-left: 0.5em;";
+        suboptionNode.style.color = getSumOptColor(questionToDo.indexOf(q), option.option_id);
+        suboptionNode.style.fontWeight = getSumOptWeight(questionToDo.indexOf(q), option.option_id);
+        let option_contents = option.option_content;
+        option_contents.forEach(function(opt_sub) {
+          if (opt_sub.type == "text") {
+            let textNode = document.createElement("p");
+            textNode.innerHTML = opt_sub.content;
+            suboptionNode.appendChild(textNode);
+          } else if (opt_sub.type == "image") {
+            let imgNode = document.createElement("img");
+            imgNode.className = "qImgBorder";
+            imgNode.height = 120;
+            imgNode.src = opt_sub.content;
+            imgNode.style.borderColor = getSumOptColor(questionToDo.indexOf(q), option.option_id) == "inherit" ? "grey" : getSumOptColor(questionToDo.indexOf(q), option.option_id);
+            suboptionNode.appendChild(imgNode);
+          } else if (opt_sub.type == "code") {
+            let codeNode = document.createElement("p");
+            codeNode.innerHTML = "<xmp>" + opt_sub.content + "</xmp>";
+            suboptionNode.appendChild(codeNode);
+          }
+        });
+
+        optionContentNode.appendChild(suboptionNode);
+        optionNode.appendChild(optionContentNode);
+      });
+    }
+    qbox.appendChild(optionNode);
+    sumBox.append(qbox);
+  });
+
+  let btns = document.createElement("div");
+  btns.style = "text-align: center; margin-bottom: 120px;";
+  btns.className = "doNotPrint";
+  let printBtn = document.createElement("button");
+  printBtn.className = "ui-button";
+  printBtn.style = "width:6em";
+  printBtn.setAttribute("onclick", "printComponent()");
+  printBtn.innerHTML = "<i class='fas fa-print'></i> Print";
+  btns.appendChild(printBtn);
+  let retryBtn = document.createElement("button");
+  retryBtn.className = "ui-button";
+  retryBtn.style = "margin-left: .5em; width:6em";
+  retryBtn.setAttribute("onclick", "reDoTest()");
+  retryBtn.innerHTML = "<i class='fas fa-redo'></i> Retry";
+  btns.appendChild(retryBtn);
+  
+  sumBox.append(btns);
+
+  let doneQ = getQuestionTouched();
+  let doneQList_html = "";
+  doneQ.forEach(function(doneQ_sub) {
+    doneQList_html += doneQ_sub + " ";
+  });
+  $("#doneQList").html(doneQList_html);
+  $("#doneQNum").html(getQuestionTouched().length);
+}
+
 function reDoTest() {
-    submitted = true;
     timeLeft = 120;
-    quizSubmitted = false;
-    // clearInterval(interval);
     chooseQuestions();
     currQuestionId = 0;
 
-    document.getElementById("quizbox").style.display = "block";
-    document.getElementById("quizContent").innerHTML = "";
+    $("#quizbox").css("css", "block");
+    $("#quizContent").html("");
     submitForm();
-    document.getElementById("doneQList").innerHTML = "";
-    document.getElementById("doneQNum").innerHTML = 0;
-    document.getElementById("quizContent").style.display = "block";
-    document.querySelector("#score").innerHTML = "0";
-
-    document.getElementById("summaryBox").style.display = "none";
+    $("#doneQList").html("");
+    $("#doneQNum").html("0");
+    $("#quizContent").css("display", "block");
+    $("#score").html("0");
+    $("#summaryBox").css("display", "none");
 }
